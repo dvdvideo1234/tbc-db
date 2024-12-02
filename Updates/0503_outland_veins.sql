@@ -1318,6 +1318,7 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 
 -- netherwing egg - put here for simplicity
 SET @GGUID := 181950;
+DELETE FROM gameobject WHERE guid = 5309376 AND id = 185915;
 DELETE FROM gameobject WHERE guid BETWEEN 181950 AND 181999 AND id = 185915;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
 (@GGUID+0,185915,530,1, -5205.8916015625, 230.035430908203125, -11.1893701553344726, 4.310965538024902343, 0, 0, -0.83388519287109375, 0.55193793773651123,600,600),
