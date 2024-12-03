@@ -181,7 +181,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+5, @GGUID+13, -1),
 -- Nagrand North
 (@SGGUID+6, @GGUID+9, -1),
-(@SGGUID+5, @GGUID+26, -1),
+(@SGGUID+6, @GGUID+26, -1),
 (@SGGUID+6, @GGUID+28, -1),
 (@SGGUID+6, @GGUID+53, -1),
 -- Barrier Hills 01
