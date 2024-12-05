@@ -5,13 +5,9 @@ SET @GGUID := 5307600;
 -- zangarmarsh        - 41
 
 -- Golden Sansam - 176583 - https://www.wowhead.com/tbc/object=176583/golden-sansam
--- hellfire peninsula - 
--- zangarmarsh        - 
--- terokkar           - 
--- nagrand            - 
--- blades edge        - 
--- netherstorm        - 
--- shadowmoon         - 
+-- hellfire peninsula - 58
+-- zangarmarsh        - 52
+-- netherstorm        - 16
 -- total         
 
 -- Mountain Silversage - 176586 - https://www.wowhead.com/tbc/object=176586/mountain-silversage
