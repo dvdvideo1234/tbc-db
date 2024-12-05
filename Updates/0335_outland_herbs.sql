@@ -1,5 +1,9 @@
 SET @SGGUID := 21300;
 SET @GGUID := 5307600;
+-- Dreamfoil - 176584 - https://www.wowhead.com/tbc/object=176584/dreamfoil
+-- hellfire peninsula - 61
+-- zangarmarsh        - 41
+
 -- Golden Sansam - 176583 - https://www.wowhead.com/tbc/object=176583/golden-sansam
 -- hellfire peninsula - 
 -- zangarmarsh        - 
