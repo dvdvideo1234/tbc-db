@@ -1095,6 +1095,199 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+127,176583,530,1, -1318.8814697265625, 2869.762939453125, -18.6121082305908203, 2.565631866455078125, 0, 0, 0.958819389343261718, 0.284016460180282592,600,600),
 (@GGUID+128,176583,530,1, -1090.0948486328125, 5651.94189453125, 61.42722702026367187, 3.961898565292358398, 0, 0, -0.91705989837646484, 0.398749500513076782,600,600);
 
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+86 AND @SGGUID+89;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+86, 'Golden Sansam - Netherstorm - Farfield', 1, 1, 0, 0),
+(@SGGUID+87, 'Golden Sansam - Netherstorm - Stormspire East', 1, 1, 0, 0),
+(@SGGUID+88, 'Golden Sansam - Netherstorm - Stormspire West', 1, 1, 0, 0),
+(@SGGUID+89, 'Golden Sansam - Netherstorm - Midrealm', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+86 AND @SGGUID+89;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Golden Sansam - Netherstorm - Farfield
+(@SGGUID+86, @GGUID+46, -1),
+(@SGGUID+86, @GGUID+105, -1),
+(@SGGUID+86, @GGUID+36, -1),
+(@SGGUID+86, @GGUID+12, -1),
+-- Golden Sansam - Netherstorm - Stormspire East
+(@SGGUID+87, @GGUID+80, -1),
+(@SGGUID+87, @GGUID+26, -1),
+(@SGGUID+87, @GGUID+31, -1),
+(@SGGUID+87, @GGUID+104, -1),
+-- Golden Sansam - Netherstorm - Stormspire West
+(@SGGUID+88, @GGUID+39, -1),
+(@SGGUID+88, @GGUID+32, -1),
+(@SGGUID+88, @GGUID+88, -1),
+(@SGGUID+88, @GGUID+107, -1),
+-- Golden Sansam - Netherstorm - Midrealm
+(@SGGUID+89, @GGUID+61, -1),
+(@SGGUID+89, @GGUID+24, -1),
+(@SGGUID+89, @GGUID+53, -1),
+(@SGGUID+89, @GGUID+6, -1);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+95 AND @SGGUID+103;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+95, 'Golden Sansam - Zangarmarsh - Dead Mire', 1, 1, 0, 0),
+(@SGGUID+96, 'Golden Sansam - Zangarmarsh - Funggor Cavern', 1, 1, 0, 0),
+(@SGGUID+97, 'Golden Sansam - Zangarmarsh - Telredor', 1, 1, 0, 0),
+(@SGGUID+98, 'Golden Sansam - Zangarmarsh - The Lagoon', 1, 1, 0, 0),
+(@SGGUID+99, 'Golden Sansam - Zangarmarsh - Orebor South', 1, 1, 0, 0),
+(@SGGUID+100, 'Golden Sansam - Zangarmarsh - Orebor West', 1, 1, 0, 0),
+(@SGGUID+101, 'Golden Sansam - Zangarmarsh - Zabrajin North', 1, 1, 0, 0),
+(@SGGUID+102, 'Golden Sansam - Zangarmarsh - Zabrajin South', 1, 1, 0, 0),
+(@SGGUID+103, 'Golden Sansam - Zangarmarsh - Angorosh Grounds', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+95 AND @SGGUID+103;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Golden Sansam - Zangarmarsh - Dead Mire
+(@SGGUID+95, @GGUID+70, -1),
+(@SGGUID+95, @GGUID+74, -1),
+(@SGGUID+95, @GGUID+20, -1),
+(@SGGUID+95, @GGUID+96, -1),
+(@SGGUID+95, @GGUID+23, -1),
+-- Golden Sansam - Zangarmarsh - Funggor Cavern
+(@SGGUID+96, @GGUID+62, -1),
+(@SGGUID+96, @GGUID+63, -1),
+(@SGGUID+96, @GGUID+103, -1),
+(@SGGUID+96, @GGUID+66, -1),
+(@SGGUID+96, @GGUID+3, -1),
+(@SGGUID+96, @GGUID+8, -1),
+(@SGGUID+96, @GGUID+128, -1),
+(@SGGUID+96, @GGUID+124, -1),
+-- Golden Sansam - Zangarmarsh - Telredor
+(@SGGUID+97, @GGUID+106, -1),
+(@SGGUID+97, @GGUID+122, -1),
+(@SGGUID+97, @GGUID+47, -1),
+(@SGGUID+97, @GGUID+19, -1),
+(@SGGUID+97, @GGUID+76, -1),
+(@SGGUID+97, @GGUID+22, -1),
+(@SGGUID+97, @GGUID+17, -1),
+-- Golden Sansam - Zangarmarsh - The Lagoon
+(@SGGUID+98, @GGUID+33, -1),
+(@SGGUID+98, @GGUID+21, -1),
+(@SGGUID+98, @GGUID+59, -1),
+(@SGGUID+98, @GGUID+84, -1),
+(@SGGUID+98, @GGUID+49, -1),
+(@SGGUID+98, @GGUID+35, -1),
+-- Golden Sansam - Zangarmarsh - Orebor South
+(@SGGUID+99, @GGUID+51, -1),
+(@SGGUID+99, @GGUID+18, -1),
+(@SGGUID+99, @GGUID+99, -1),
+(@SGGUID+99, @GGUID+67, -1),
+-- Golden Sansam - Zangarmarsh - Orebor West
+(@SGGUID+100, @GGUID+100, -1),
+(@SGGUID+100, @GGUID+10, -1),
+(@SGGUID+100, @GGUID+113, -1),
+(@SGGUID+100, @GGUID+86, -1),
+(@SGGUID+100, @GGUID+110, -1),
+-- Golden Sansam - Zangarmarsh - Zabrajin North
+(@SGGUID+101, @GGUID+34, -1),
+(@SGGUID+101, @GGUID+101, -1),
+(@SGGUID+101, @GGUID+97, -1),
+(@SGGUID+101, @GGUID+102, -1),
+(@SGGUID+101, @GGUID+2, -1),
+-- Golden Sansam - Zangarmarsh - Zabrajin South
+(@SGGUID+102, @GGUID+90, -1),
+(@SGGUID+102, @GGUID+81, -1),
+(@SGGUID+102, @GGUID+92, -1),
+(@SGGUID+102, @GGUID+65, -1),
+(@SGGUID+102, @GGUID+114, -1),
+-- Golden Sansam - Zangarmarsh - Angorosh Grounds
+(@SGGUID+103, @GGUID+94, -1),
+(@SGGUID+103, @GGUID+73, -1),
+(@SGGUID+103, @GGUID+56, -1),
+(@SGGUID+103, @GGUID+30, -1),
+(@SGGUID+103, @GGUID+78, -1),
+(@SGGUID+103, @GGUID+125, -1),
+(@SGGUID+103, @GGUID+27, -1);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+104 AND @SGGUID+114;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+104, 'Golden Sansam - Hellfire - Fallen Sky Ridge', 1, 1, 0, 0),
+(@SGGUID+105, 'Golden Sansam - Hellfire - Fissure', 1, 1, 0, 0),
+(@SGGUID+106, 'Golden Sansam - Hellfire - Ramparts', 1, 1, 0, 0),
+(@SGGUID+107, 'Golden Sansam - Hellfire - Razorthorn Trail', 1, 1, 0, 0),
+(@SGGUID+108, 'Golden Sansam - Hellfire - Expedition Armory', 1, 1, 0, 0),
+(@SGGUID+109, 'Golden Sansam - Hellfire - Zethgor South', 1, 1, 0, 0),
+(@SGGUID+110, 'Golden Sansam - Hellfire - Zethgor North', 1, 1, 0, 0),
+(@SGGUID+111, 'Golden Sansam - Hellfire - Legion Front', 1, 1, 0, 0),
+(@SGGUID+112, 'Golden Sansam - Hellfire - Forge Camps', 1, 1, 0, 0),
+(@SGGUID+113, 'Golden Sansam - Hellfire - Glory North', 1, 1, 0, 0),
+(@SGGUID+114, 'Golden Sansam - Hellfire - Glory South', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+104 AND @SGGUID+114;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Golden Sansam - Hellfire - Fallen Sky Ridge
+(@SGGUID+104, @GGUID+44, -1),
+(@SGGUID+104, @GGUID+77, -1),
+(@SGGUID+104, @GGUID+57, -1),
+(@SGGUID+104, @GGUID+68, -1),
+(@SGGUID+104, @GGUID+54, -1),
+-- Golden Sansam - Hellfire - Fissure
+(@SGGUID+105, @GGUID+42, -1),
+(@SGGUID+105, @GGUID+40, -1),
+(@SGGUID+105, @GGUID+109, -1),
+(@SGGUID+105, @GGUID+5, -1),
+(@SGGUID+105, @GGUID+75, -1),
+(@SGGUID+105, @GGUID+1, -1),
+-- Golden Sansam - Hellfire - Ramparts
+(@SGGUID+106, @GGUID+14, -1),
+(@SGGUID+106, @GGUID+13, -1),
+(@SGGUID+106, @GGUID+108, -1),
+(@SGGUID+106, @GGUID+123, -1),
+(@SGGUID+106, @GGUID+50, -1),
+(@SGGUID+106, @GGUID+119, -1),
+(@SGGUID+106, @GGUID+55, -1),
+-- Golden Sansam - Hellfire - Razorthorn Trail
+(@SGGUID+107, @GGUID+48, -1),
+(@SGGUID+107, @GGUID+116, -1),
+(@SGGUID+107, @GGUID+58, -1),
+(@SGGUID+107, @GGUID+37, -1),
+(@SGGUID+107, @GGUID+45, -1),
+-- Golden Sansam - Hellfire - Expedition Armory
+(@SGGUID+108, @GGUID+7, -1),
+(@SGGUID+108, @GGUID+82, -1),
+(@SGGUID+108, @GGUID+11, -1),
+(@SGGUID+108, @GGUID+60, -1),
+(@SGGUID+108, @GGUID+127, -1),
+-- Golden Sansam - Hellfire - Zethgor South
+(@SGGUID+109, @GGUID+115, -1),
+(@SGGUID+109, @GGUID+112, -1),
+(@SGGUID+109, @GGUID+0, -1),
+(@SGGUID+109, @GGUID+79, -1),
+-- Golden Sansam - Hellfire - Zethgor North
+(@SGGUID+110, @GGUID+29, -1),
+(@SGGUID+110, @GGUID+15, -1),
+(@SGGUID+110, @GGUID+16, -1),
+(@SGGUID+110, @GGUID+25, -1),
+(@SGGUID+110, @GGUID+95, -1),
+-- Golden Sansam - Hellfire - Legion Front
+(@SGGUID+111, @GGUID+71, -1),
+(@SGGUID+111, @GGUID+89, -1),
+(@SGGUID+111, @GGUID+120, -1),
+(@SGGUID+111, @GGUID+91, -1),
+-- Golden Sansam - Hellfire - Forge Camps
+(@SGGUID+112, @GGUID+9, -1),
+(@SGGUID+112, @GGUID+64, -1),
+(@SGGUID+112, @GGUID+52, -1),
+(@SGGUID+112, @GGUID+28, -1),
+(@SGGUID+112, @GGUID+111, -1),
+-- Golden Sansam - Hellfire - Glory North
+(@SGGUID+113, @GGUID+83, -1),
+(@SGGUID+113, @GGUID+38, -1),
+(@SGGUID+113, @GGUID+69, -1),
+(@SGGUID+113, @GGUID+87, -1),
+(@SGGUID+113, @GGUID+121, -1),
+(@SGGUID+113, @GGUID+93, -1),
+-- Golden Sansam - Hellfire - Glory South
+(@SGGUID+114, @GGUID+04, -1),
+(@SGGUID+114, @GGUID+118, -1),
+(@SGGUID+114, @GGUID+72, -1),
+(@SGGUID+114, @GGUID+98, -1),
+(@SGGUID+114, @GGUID+43, -1),
+(@SGGUID+114, @GGUID+117, -1),
+(@SGGUID+114, @GGUID+126, -1);
+
 -- mountain silversage
 SET @GGUID := 180800;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
@@ -1232,24 +1425,24 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+7,2041,530,1, 3500.8916015625, 2960.67626953125, 142.48712158203125, 3.159062385559082031, 0, 0, -0.99996185302734375, 0.008734640665352344,600,600),
 (@GGUID+8,2041,530,1, 3455.556884765625, 2898.902099609375, 142.039154052734375, 1.099556446075439453, 0, 0, 0.522498130798339843, 0.852640450000762939,600,600);
 
-DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+61 AND @SGGUID+62;
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+93 AND @SGGUID+94;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+61, 'Liferoot - Netherstorm - Eco Dome', 1, 1, 0, 0),
-(@SGGUID+62, 'Liferoot - Netherstorm - Stormspire', 1, 1, 0, 0);
+(@SGGUID+93, 'Liferoot - Netherstorm - Eco Dome', 1, 1, 0, 0),
+(@SGGUID+94, 'Liferoot - Netherstorm - Stormspire', 1, 1, 0, 0);
 
-DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+61 AND @SGGUID+62;
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+93 AND @SGGUID+94;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- Liferoot - Eco Dome
-(@SGGUID+61, @GGUID+1, -1),
-(@SGGUID+61, @GGUID+7, -1),
-(@SGGUID+61, @GGUID+0, -1),
-(@SGGUID+61, @GGUID+8, -1),
-(@SGGUID+61, @GGUID+6, -1),
+(@SGGUID+93, @GGUID+1, -1),
+(@SGGUID+93, @GGUID+7, -1),
+(@SGGUID+93, @GGUID+0, -1),
+(@SGGUID+93, @GGUID+8, -1),
+(@SGGUID+93, @GGUID+6, -1),
 -- Liferoot - Stormspire
-(@SGGUID+62, @GGUID+4, -1),
-(@SGGUID+62, @GGUID+5, -1),
-(@SGGUID+62, @GGUID+3, -1),
-(@SGGUID+62, @GGUID+2, -1);
+(@SGGUID+94, @GGUID+4, -1),
+(@SGGUID+94, @GGUID+5, -1),
+(@SGGUID+94, @GGUID+3, -1),
+(@SGGUID+94, @GGUID+2, -1);
 
 -- hellfire spineleaf
 SET @GGUID := 181100;
@@ -1353,12 +1546,12 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+96,181372,530,1, -990.619384765625, 2178.052978515625, 15.59610462188720703, 2.391098499298095703, 0, 0, 0.930417060852050781, 0.366502493619918823,600,600),
 (@GGUID+97,181372,530,1, -948.23199462890625, 2313.77392578125, -1.21154499053955078, 3.892086982727050781, 0, 0, -0.93041706085205078, 0.366502493619918823,600,600);
 
-DELETE FROM spawn_group WHERE Id = @SGGUID+63;
+DELETE FROM spawn_group WHERE Id = @SGGUID+90;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+63, 'Hellfire Spineleaf', 1, 15, 0, 0);
+(@SGGUID+90, 'Hellfire Spineleaf', 1, 15, 0, 0);
 
-DELETE FROM spawn_group_spawn WHERE Id = @SGGUID+63; -- Hellfire Spineleaf
-INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) SELECT @SGGUID+63, guid, -1 FROM gameobject WHERE id = 181372 AND guid BETWEEN @GGUID + 0 AND @GGUID + 97;
+DELETE FROM spawn_group_spawn WHERE Id = @SGGUID+90; -- Hellfire Spineleaf
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) SELECT @SGGUID+90, guid, -1 FROM gameobject WHERE id = 181372 AND guid BETWEEN @GGUID + 0 AND @GGUID + 97;
 
 -- felweed
 SET @GGUID := 182000;
@@ -2845,12 +3038,12 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+72,185881,530,1, -5208.728515625, 168.2562408447265625, 69.8622283935546875, 4.572763919830322265, 0, 0, -0.75470924377441406, 0.656059443950653076,600,600),
 (@GGUID+73,185881,530,1, -5149.0947265625, 45.70160675048828125, 77.93637847900390625, 0.541050612926483154, 0, 0, 0.267237663269042968, 0.96363067626953125,600,600);
 
-DELETE FROM spawn_group WHERE Id = @SGGUID+64;
+DELETE FROM spawn_group WHERE Id = @SGGUID+91;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+64, 'Netherdust Bush', 1, 17, 0, 0);
+(@SGGUID+91, 'Netherdust Bush', 1, 17, 0, 0);
 
-DELETE FROM spawn_group_spawn WHERE Id = @SGGUID+64; -- Netherdust Bush
-INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) SELECT @SGGUID+64, guid, -1 FROM gameobject WHERE id = 185881;
+DELETE FROM spawn_group_spawn WHERE Id = @SGGUID+91; -- Netherdust Bush
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) SELECT @SGGUID+91, guid, -1 FROM gameobject WHERE id = 185881;
 
 SET @GGUID := 189000; -- dreamfoil
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES

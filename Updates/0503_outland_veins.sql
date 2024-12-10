@@ -1350,12 +1350,12 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+82,185877,530,1, -5114.5654296875, 89.10471343994140625, -11.3827486038208007, 2.408554315567016601, 0, 0, 0.933580398559570312, 0.358367979526519775,600,600),
 (@GGUID+83,185877,530,1, -4585.40625, 735.88348388671875, -16.2231426239013671, 0.733038246631622314, 0, 0, 0.358367949724197387, 0.933580398559570312,600,600);
 
-DELETE FROM spawn_group WHERE Id = @SGGUID+65;
+DELETE FROM spawn_group WHERE Id = @SGGUID+92;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+65, 'Nethercite Ore', 1, 17, 0, 0);
+(@SGGUID+92, 'Nethercite Ore', 1, 17, 0, 0);
 
-DELETE FROM spawn_group_spawn WHERE Id = @SGGUID+65; -- Nethercite Ore
-INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) SELECT @SGGUID+65, guid, -1 FROM gameobject WHERE id = 185877;
+DELETE FROM spawn_group_spawn WHERE Id = @SGGUID+92; -- Nethercite Ore
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) SELECT @SGGUID+92, guid, -1 FROM gameobject WHERE id = 185877;
 
 -- netherwing egg - put here for simplicity
 SET @GGUID := 181950;
