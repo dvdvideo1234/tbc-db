@@ -2845,6 +2845,13 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+72,185881,530,1, -5208.728515625, 168.2562408447265625, 69.8622283935546875, 4.572763919830322265, 0, 0, -0.75470924377441406, 0.656059443950653076,600,600),
 (@GGUID+73,185881,530,1, -5149.0947265625, 45.70160675048828125, 77.93637847900390625, 0.541050612926483154, 0, 0, 0.267237663269042968, 0.96363067626953125,600,600);
 
+DELETE FROM spawn_group WHERE Id = @SGGUID+64;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+64, 'Netherdust Bush', 1, 17, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id = @SGGUID+64; -- Netherdust Bush
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) SELECT @SGGUID+64, guid, -1 FROM gameobject WHERE id = 185881;
+
 SET @GGUID := 189000; -- dreamfoil
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
 (@GGUID+0,176584,530,1, -88.6867446899414062, 1942.2000732421875, 79.39585113525390625, 5.986480236053466796, 0, 0, -0.14780902862548828, 0.989015936851501464,600,600),

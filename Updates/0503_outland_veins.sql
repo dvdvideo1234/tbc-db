@@ -24,6 +24,8 @@ select count(*) from gameobject where id  = 185877 AND map=530 AND position_x NO
 
 DELETE FROM gameobject WHERE Id IN(181555, 181556, 181569, 181570, 181557) AND map=530 AND position_x NOT BETWEEN 11400 AND 13100;
 
+SET @SGGUID := 21300;
+
 -- fel iron
 SET @GGUID := 184000;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
@@ -1347,6 +1349,13 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+81,185877,530,1, -5016.34619140625, 674.0938720703125, 20.57270050048828125, 0.855211377143859863, 0, 0, 0.414693236351013183, 0.909961283206939697,600,600),
 (@GGUID+82,185877,530,1, -5114.5654296875, 89.10471343994140625, -11.3827486038208007, 2.408554315567016601, 0, 0, 0.933580398559570312, 0.358367979526519775,600,600),
 (@GGUID+83,185877,530,1, -4585.40625, 735.88348388671875, -16.2231426239013671, 0.733038246631622314, 0, 0, 0.358367949724197387, 0.933580398559570312,600,600);
+
+DELETE FROM spawn_group WHERE Id = @SGGUID+65;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+65, 'Nethercite Ore', 1, 17, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id = @SGGUID+65; -- Nethercite Ore
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) SELECT @SGGUID+65, guid, -1 FROM gameobject WHERE id = 185877;
 
 -- netherwing egg - put here for simplicity
 SET @GGUID := 181950;
