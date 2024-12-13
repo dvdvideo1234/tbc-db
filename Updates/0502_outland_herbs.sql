@@ -1349,6 +1349,81 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+55,176586,530,1, 540.63702392578125, 2659.04052734375, 256.075164794921875, 2.967041015625, 0, 0, 0.996193885803222656, 0.087165042757987976,600,600),
 (@GGUID+56,176586,530,1, 567.0928955078125, 2512.0205078125, 216.3976593017578125, 4.572763919830322265, 0, 0, -0.75470924377441406, 0.656059443950653076,600,600);
 
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+115 AND @SGGUID+120;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+115, 'Mountain Silversage - Hellfire - ZethGor', 1, 2, 0, 0),
+(@SGGUID+116, 'Mountain Silversage - Hellfire - Dark Portal', 1, 1, 0, 0),
+(@SGGUID+117, 'Mountain Silversage - Hellfire - Forge Camps', 1, 2, 0, 0),
+(@SGGUID+118, 'Mountain Silversage - Hellfire - Temple and Pools', 1, 2, 0, 0),
+(@SGGUID+119, 'Mountain Silversage - Hellfire - Fissure East', 1, 2, 0, 0),
+(@SGGUID+120, 'Mountain Silversage - Hellfire - Fissure West', 1, 2, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+115 AND @SGGUID+120;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Mountain Silversage - Hellfire - ZethGor
+(@SGGUID+115, @GGUID+9, -1),
+(@SGGUID+115, @GGUID+3, -1),
+(@SGGUID+115, @GGUID+10, -1),
+(@SGGUID+115, @GGUID+7, -1),
+(@SGGUID+115, @GGUID+38, -1),
+(@SGGUID+115, @GGUID+39, -1),
+(@SGGUID+115, @GGUID+25, -1),
+(@SGGUID+115, @GGUID+30, -1),
+(@SGGUID+115, @GGUID+29, -1),
+(@SGGUID+115, @GGUID+36, -1),
+-- Mountain Silversage - Hellfire - Dark Portal
+(@SGGUID+116, @GGUID+49, -1),
+(@SGGUID+116, @GGUID+52, -1),
+(@SGGUID+116, @GGUID+5, -1),
+(@SGGUID+116, @GGUID+13, -1),
+(@SGGUID+116, @GGUID+45, -1),
+-- Mountain Silversage - Hellfire - Forge Camps
+(@SGGUID+117, @GGUID+6, -1),
+(@SGGUID+117, @GGUID+21, -1),
+(@SGGUID+117, @GGUID+4, -1),
+(@SGGUID+117, @GGUID+55, -1),
+(@SGGUID+117, @GGUID+56, -1),
+(@SGGUID+117, @GGUID+0, -1),
+(@SGGUID+117, @GGUID+37, -1),
+(@SGGUID+117, @GGUID+40, -1),
+(@SGGUID+117, @GGUID+47, -1),
+(@SGGUID+117, @GGUID+54, -1),
+-- Mountain Silversage - Hellfire - Temple and Pools
+(@SGGUID+118, @GGUID+26, -1),
+(@SGGUID+118, @GGUID+35, -1),
+(@SGGUID+118, @GGUID+34, -1),
+(@SGGUID+118, @GGUID+27, -1),
+(@SGGUID+118, @GGUID+50, -1),
+(@SGGUID+118, @GGUID+41, -1),
+(@SGGUID+118, @GGUID+42, -1),
+(@SGGUID+118, @GGUID+11, -1),
+(@SGGUID+118, @GGUID+12, -1),
+(@SGGUID+118, @GGUID+53, -1),
+(@SGGUID+118, @GGUID+33, -1),
+(@SGGUID+118, @GGUID+8, -1),
+-- Mountain Silversage - Hellfire - Fissure East
+(@SGGUID+119, @GGUID+24, -1),
+(@SGGUID+119, @GGUID+48, -1),
+(@SGGUID+119, @GGUID+19, -1),
+(@SGGUID+119, @GGUID+43, -1),
+(@SGGUID+119, @GGUID+16, -1),
+(@SGGUID+119, @GGUID+15, -1),
+(@SGGUID+119, @GGUID+44, -1),
+(@SGGUID+119, @GGUID+18, -1),
+(@SGGUID+119, @GGUID+22, -1),
+(@SGGUID+119, @GGUID+32, -1),
+-- Mountain Silversage - Hellfire - Fissure West
+(@SGGUID+120, @GGUID+20, -1),
+(@SGGUID+120, @GGUID+23, -1),
+(@SGGUID+120, @GGUID+17, -1),
+(@SGGUID+120, @GGUID+31, -1),
+(@SGGUID+120, @GGUID+46, -1),
+(@SGGUID+120, @GGUID+2, -1),
+(@SGGUID+120, @GGUID+1, -1),
+(@SGGUID+120, @GGUID+14, -1),
+(@SGGUID+120, @GGUID+28, -1),
+(@SGGUID+120, @GGUID+51, -1);
+
 -- blindweed
 SET @GGUID := 180900;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
