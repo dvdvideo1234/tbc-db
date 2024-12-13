@@ -1487,6 +1487,95 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+57,183046,530,1, 538.99072265625, 6621.42041015625, 24.03618049621582031, 5.532694816589355468, 0, 0, -0.3665008544921875, 0.93041771650314331,600,600),
 (@GGUID+58,183046,530,1, -773.40301513671875, 5541.00244140625, 23.16878128051757812, 2.478367090225219726, 0, 0, 0.94551849365234375, 0.325568377971649169,600,600);
 
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+121 AND @SGGUID+132;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+121, 'Blindweed - Zangarmarsh - Around Dead Mire', 1, 1, 0, 0),
+(@SGGUID+122, 'Blindweed - Zangarmarsh - Umbrafen Village', 1, 1, 0, 0),
+(@SGGUID+123, 'Blindweed - Zangarmarsh - Telredor', 1, 1, 0, 0),
+(@SGGUID+124, 'Blindweed - Zangarmarsh - Lagoon Pump', 1, 1, 0, 0),
+(@SGGUID+125, 'Blindweed - Zangarmarsh - Lagoon', 1, 1, 0, 0),
+(@SGGUID+126, 'Blindweed - Zangarmarsh - Bloodscale Grounds', 1, 1, 0, 0),
+(@SGGUID+127, 'Blindweed - Zangarmarsh - Feralfen Village', 1, 1, 0, 0),
+(@SGGUID+128, 'Blindweed - Zangarmarsh - Zabrajin', 1, 1, 0, 0),
+(@SGGUID+129, 'Blindweed - Zangarmarsh - Serpent Lake West', 1, 1, 0, 0),
+(@SGGUID+130, 'Blindweed - Zangarmarsh - Hewn Bog', 1, 1, 0, 0),
+(@SGGUID+131, 'Blindweed - Zangarmarsh - Spawning Glen', 1, 2, 0, 0),
+(@SGGUID+132, 'Blindweed - Zangarmarsh - Marshlight Lake', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+121 AND @SGGUID+132;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Blindweed - Zangarmarsh - Around Dead Mire
+(@SGGUID+121, @GGUID+26, -1),
+(@SGGUID+121, @GGUID+21, -1),
+(@SGGUID+121, @GGUID+12, -1),
+(@SGGUID+121, @GGUID+2, -1),
+(@SGGUID+121, @GGUID+54, -1),
+-- Blindweed - Zangarmarsh - Umbrafen Village
+(@SGGUID+122, @GGUID+51, -1),
+(@SGGUID+122, @GGUID+35, -1),
+(@SGGUID+122, @GGUID+58, -1),
+(@SGGUID+122, @GGUID+30, -1),
+(@SGGUID+122, @GGUID+4, -1),
+-- Blindweed - Zangarmarsh - Telredor
+(@SGGUID+123, @GGUID+46, -1),
+(@SGGUID+123, @GGUID+13, -1),
+(@SGGUID+123, @GGUID+47, -1),
+-- Blindweed - Zangarmarsh - Lagoon Pump
+(@SGGUID+124, @GGUID+10, -1),
+(@SGGUID+124, @GGUID+19, -1),
+(@SGGUID+124, @GGUID+24, -1),
+(@SGGUID+124, @GGUID+44, -1),
+(@SGGUID+124, @GGUID+8, -1),
+-- Blindweed - Zangarmarsh - Lagoon
+(@SGGUID+125, @GGUID+11, -1),
+(@SGGUID+125, @GGUID+32, -1),
+(@SGGUID+125, @GGUID+29, -1),
+(@SGGUID+125, @GGUID+28, -1),
+-- Blindweed - Zangarmarsh - Bloodscale Grounds
+(@SGGUID+126, @GGUID+45, -1),
+(@SGGUID+126, @GGUID+22, -1),
+(@SGGUID+126, @GGUID+57, -1),
+-- Blindweed - Zangarmarsh - Feralfen Village
+(@SGGUID+127, @GGUID+7, -1),
+(@SGGUID+127, @GGUID+38, -1),
+(@SGGUID+127, @GGUID+31, -1),
+(@SGGUID+127, @GGUID+36, -1),
+-- Blindweed - Zangarmarsh - Zabrajin
+(@SGGUID+128, @GGUID+25, -1),
+(@SGGUID+128, @GGUID+49, -1),
+(@SGGUID+128, @GGUID+39, -1),
+(@SGGUID+128, @GGUID+37, -1),
+(@SGGUID+128, @GGUID+23, -1),
+(@SGGUID+128, @GGUID+34, -1),
+-- Blindweed - Zangarmarsh - Serpent Lake West
+(@SGGUID+129, @GGUID+55, -1),
+(@SGGUID+129, @GGUID+5, -1),
+(@SGGUID+129, @GGUID+6, -1),
+(@SGGUID+129, @GGUID+53, -1),
+(@SGGUID+129, @GGUID+14, -1),
+-- Blindweed - Zangarmarsh - Hewn Bog
+(@SGGUID+130, @GGUID+43, -1),
+(@SGGUID+130, @GGUID+48, -1),
+(@SGGUID+130, @GGUID+50, -1),
+(@SGGUID+130, @GGUID+42, -1),
+(@SGGUID+130, @GGUID+56, -1),
+(@SGGUID+130, @GGUID+52, -1),
+-- Blindweed - Zangarmarsh - Spawning Glen
+(@SGGUID+131, @GGUID+27, -1),
+(@SGGUID+131, @GGUID+16, -1),
+(@SGGUID+131, @GGUID+41, -1),
+(@SGGUID+131, @GGUID+20, -1),
+(@SGGUID+131, @GGUID+33, -1),
+(@SGGUID+131, @GGUID+3, -1),
+(@SGGUID+131, @GGUID+17, -1),
+-- Blindweed - Zangarmarsh - Marshlight Lake
+(@SGGUID+132, @GGUID+1, -1),
+(@SGGUID+132, @GGUID+0, -1),
+(@SGGUID+132, @GGUID+15, -1),
+(@SGGUID+132, @GGUID+9, -1),
+(@SGGUID+132, @GGUID+40, -1),
+(@SGGUID+132, @GGUID+18, -1);
+
 -- liferoot
 SET @GGUID := 181000;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
