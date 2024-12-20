@@ -2497,6 +2497,133 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+155, 'Felweed - Zangarmarsh - Dead Mire', 1, 2, 0, 0),
 (@SGGUID+156, 'Felweed - Zangarmarsh - Umbrafen Lagoon', 1, 2, 0, 0);
 
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+150 AND @SGGUID+156;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Felweed - Zangarmarsh - Spawning Glen
+(@SGGUID+150, @GGUID+49, -1),
+(@SGGUID+150, @GGUID+27, -1),
+(@SGGUID+150, @GGUID+39, -1),
+(@SGGUID+150, @GGUID+106, -1),
+(@SGGUID+150, @GGUID+11, -1),
+(@SGGUID+150, @GGUID+78, -1),
+(@SGGUID+150, @GGUID+76, -1),
+(@SGGUID+150, @GGUID+41, -1),
+(@SGGUID+150, @GGUID+90, -1),
+(@SGGUID+150, @GGUID+1, -1),
+(@SGGUID+150, @GGUID+72, -1),
+(@SGGUID+150, @GGUID+57, -1),
+(@SGGUID+150, @GGUID+15, -1),
+(@SGGUID+150, @GGUID+86, -1),
+(@SGGUID+150, @GGUID+43, -1),
+(@SGGUID+150, @GGUID+77, -1),
+(@SGGUID+150, @GGUID+108, -1),
+-- Felweed - Zangarmarsh - Angorosh Stronghold
+(@SGGUID+151, @GGUID+69, -1),
+(@SGGUID+151, @GGUID+60, -1),
+(@SGGUID+151, @GGUID+89, -1),
+(@SGGUID+151, @GGUID+59, -1),
+(@SGGUID+151, @GGUID+50, -1),
+-- Felweed - Zangarmarsh - Daggerfen Village
+(@SGGUID+152, @GGUID+38, -1),
+(@SGGUID+152, @GGUID+24, -1),
+(@SGGUID+152, @GGUID+82, -1),
+(@SGGUID+152, @GGUID+101, -1),
+(@SGGUID+152, @GGUID+30, -1),
+(@SGGUID+152, @GGUID+64, -1),
+(@SGGUID+152, @GGUID+33, -1),
+(@SGGUID+152, @GGUID+62, -1),
+(@SGGUID+152, @GGUID+19, -1),
+(@SGGUID+152, @GGUID+48, -1),
+(@SGGUID+152, @GGUID+6, -1),
+(@SGGUID+152, @GGUID+56, -1),
+(@SGGUID+152, @GGUID+71, -1),
+(@SGGUID+152, @GGUID+3, -1),
+(@SGGUID+152, @GGUID+21, -1),
+(@SGGUID+152, @GGUID+63, -1),
+(@SGGUID+152, @GGUID+65, -1),
+(@SGGUID+152, @GGUID+93, -1),
+(@SGGUID+152, @GGUID+81, -1),
+(@SGGUID+152, @GGUID+107, -1),
+-- Felweed - Zangarmarsh - Serpent Lake
+(@SGGUID+153, @GGUID+4, -1),
+(@SGGUID+153, @GGUID+103, -1),
+(@SGGUID+153, @GGUID+91, -1),
+(@SGGUID+153, @GGUID+83, -1),
+(@SGGUID+153, @GGUID+102, -1),
+(@SGGUID+153, @GGUID+54, -1),
+(@SGGUID+153, @GGUID+10, -1),
+(@SGGUID+153, @GGUID+95, -1),
+(@SGGUID+153, @GGUID+12, -1),
+(@SGGUID+153, @GGUID+45, -1),
+(@SGGUID+153, @GGUID+75, -1),
+(@SGGUID+153, @GGUID+36, -1),
+(@SGGUID+153, @GGUID+84, -1),
+(@SGGUID+153, @GGUID+34, -1),
+(@SGGUID+153, @GGUID+96, -1),
+(@SGGUID+153, @GGUID+18, -1),
+(@SGGUID+153, @GGUID+109, -1),
+(@SGGUID+153, @GGUID+61, -1),
+(@SGGUID+153, @GGUID+25, -1),
+(@SGGUID+153, @GGUID+17, -1),
+-- Felweed - Zangarmarsh - Feralfen Village
+(@SGGUID+154, @GGUID+110, -1),
+(@SGGUID+154, @GGUID+115, -1),
+(@SGGUID+154, @GGUID+74, -1),
+(@SGGUID+154, @GGUID+98, -1),
+(@SGGUID+154, @GGUID+92, -1),
+(@SGGUID+154, @GGUID+73, -1),
+(@SGGUID+154, @GGUID+116, -1),
+(@SGGUID+154, @GGUID+14, -1),
+(@SGGUID+154, @GGUID+97, -1),
+(@SGGUID+154, @GGUID+0, -1),
+(@SGGUID+154, @GGUID+51, -1),
+(@SGGUID+154, @GGUID+9, -1),
+(@SGGUID+154, @GGUID+7, -1),
+-- Felweed - Zangarmarsh - Dead Mire
+(@SGGUID+155, @GGUID+68, -1),
+(@SGGUID+155, @GGUID+42, -1),
+(@SGGUID+155, @GGUID+67, -1),
+(@SGGUID+155, @GGUID+29, -1),
+(@SGGUID+155, @GGUID+55, -1),
+(@SGGUID+155, @GGUID+20, -1),
+(@SGGUID+155, @GGUID+46, -1),
+(@SGGUID+155, @GGUID+31, -1),
+(@SGGUID+155, @GGUID+40, -1),
+(@SGGUID+155, @GGUID+37, -1),
+(@SGGUID+155, @GGUID+111, -1),
+(@SGGUID+155, @GGUID+16, -1),
+(@SGGUID+155, @GGUID+2, -1),
+(@SGGUID+155, @GGUID+113, -1),
+(@SGGUID+155, @GGUID+44, -1),
+(@SGGUID+155, @GGUID+99, -1),
+(@SGGUID+155, @GGUID+80, -1),
+(@SGGUID+155, @GGUID+32, -1),
+-- Felweed - Zangarmarsh - Umbrafen Lagoon
+(@SGGUID+156, @GGUID+5, -1),
+(@SGGUID+156, @GGUID+8, -1),
+(@SGGUID+156, @GGUID+70, -1),
+(@SGGUID+156, @GGUID+105, -1),
+(@SGGUID+156, @GGUID+114, -1),
+(@SGGUID+156, @GGUID+112, -1),
+(@SGGUID+156, @GGUID+35, -1),
+(@SGGUID+156, @GGUID+88, -1),
+(@SGGUID+156, @GGUID+79, -1),
+(@SGGUID+156, @GGUID+53, -1),
+(@SGGUID+156, @GGUID+66, -1),
+(@SGGUID+156, @GGUID+85, -1),
+(@SGGUID+156, @GGUID+23, -1),
+(@SGGUID+156, @GGUID+52, -1),
+(@SGGUID+156, @GGUID+100, -1),
+(@SGGUID+156, @GGUID+58, -1),
+(@SGGUID+156, @GGUID+87, -1),
+(@SGGUID+156, @GGUID+28, -1),
+(@SGGUID+156, @GGUID+26, -1),
+(@SGGUID+156, @GGUID+13, -1),
+(@SGGUID+156, @GGUID+94, -1),
+(@SGGUID+156, @GGUID+22, -1),
+(@SGGUID+156, @GGUID+104, -1),
+(@SGGUID+156, @GGUID+47, -1);
+
 -- dreaming glory
 SET @GGUID := 183000;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
@@ -2940,6 +3067,64 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+437,181271,530,1, 3537.3271484375, 7045.5078125, 148.784454345703125, 2.862335443496704101, 0, 0, 0.990267753601074218, 0.139175355434417724,600,600),
 (@GGUID+438,181271,530,1, -3814.779541015625, 5820.767578125, -39.543853759765625, 4.817109584808349609, 0, 0, -0.66913032531738281, 0.74314504861831665,600,600);
 
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+190 AND @SGGUID+194;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+190, 'Dreaming Glory - Hellfire Peninsula - Forge Camps', 1, 2, 0, 0),
+(@SGGUID+191, 'Dreaming Glory - Hellfire Peninsula - ZethGor', 1, 2, 0, 0),
+(@SGGUID+192, 'Dreaming Glory - Hellfire Peninsula - Fissure West', 1, 2, 0, 0),
+(@SGGUID+193, 'Dreaming Glory - Hellfire Peninsula - Fissure East', 1, 2, 0, 0),
+(@SGGUID+194, 'Dreaming Glory - Hellfire Peninsula - NW', 1, 2, 0, 0);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+195 AND @SGGUID+203;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+195, 'Dreaming Glory - Terokkar - Bleeding Hollow Ruins', 1, 2, 0, 0),
+(@SGGUID+196, 'Dreaming Glory - Terokkar - Southern Ledge', 1, 2, 0, 0),
+(@SGGUID+197, 'Dreaming Glory - Terokkar - Veil Shalas', 1, 2, 0, 0),
+(@SGGUID+198, 'Dreaming Glory - Terokkar - Skettis', 1, 2, 0, 0),
+(@SGGUID+199, 'Dreaming Glory - Terokkar - Veil Skith', 1, 2, 0, 0),
+(@SGGUID+200, 'Dreaming Glory - Terokkar - Stonebreaker Hold', 1, 2, 0, 0),
+(@SGGUID+201, 'Dreaming Glory - Terokkar - Cenarion Thicket', 1, 2, 0, 0),
+(@SGGUID+202, 'Dreaming Glory - Terokkar - Bonechewer Ruins', 1, 2, 0, 0),
+(@SGGUID+203, 'Dreaming Glory - Terokkar - Firewing Point', 1, 2, 0, 0);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+204 AND @SGGUID+208;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+204, 'Dreaming Glory - Nagrand - Twilight Ridge', 1, 2, 0, 0),
+(@SGGUID+205, 'Dreaming Glory - Nagrand - Oshugun', 1, 2, 0, 0),
+(@SGGUID+206, 'Dreaming Glory - Nagrand - North', 1, 2, 0, 0),
+(@SGGUID+207, 'Dreaming Glory - Nagrand - Ring of Trials', 1, 2, 0, 0),
+(@SGGUID+208, 'Dreaming Glory - Nagrand - Killsorrow Fortress', 1, 2, 0, 0);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+209 AND @SGGUID+216;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+209, 'Dreaming Glory - BEM - Sylvanaar', 1, 2, 0, 0),
+(@SGGUID+210, 'Dreaming Glory - BEM - Thunderlord Stronghold', 1, 2, 0, 0),
+(@SGGUID+211, 'Dreaming Glory - BEM - Toshley Plateau', 1, 2, 0, 0),
+(@SGGUID+212, 'Dreaming Glory - BEM - Vekhaar Stand', 1, 2, 0, 0),
+(@SGGUID+213, 'Dreaming Glory - BEM - Ogrila', 1, 2, 0, 0),
+(@SGGUID+214, 'Dreaming Glory - BEM - Bashir', 1, 2, 0, 0),
+(@SGGUID+215, 'Dreaming Glory - BEM - Ravens Wood', 1, 2, 0, 0),
+(@SGGUID+216, 'Dreaming Glory - BEM - Ruuan Weald', 1, 2, 0, 0);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+217 AND @SGGUID+226;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+217, 'Dreaming Glory - Netherstorm - Area 52', 1, 2, 0, 0),
+(@SGGUID+218, 'Dreaming Glory - Netherstorm - Manaforge Coruu', 1, 2, 0, 0),
+(@SGGUID+219, 'Dreaming Glory - Netherstorm - Manaforge Duro', 1, 2, 0, 0),
+(@SGGUID+220, 'Dreaming Glory - Netherstorm - Manaforge Ara', 1, 2, 0, 0),
+(@SGGUID+221, 'Dreaming Glory - Netherstorm - Midrealm', 1, 2, 0, 0),
+(@SGGUID+222, 'Dreaming Glory - Netherstorm - Stormspire', 1, 2, 0, 0),
+(@SGGUID+223, 'Dreaming Glory - Netherstorm - Farfield', 1, 2, 0, 0),
+(@SGGUID+224, 'Dreaming Glory - Netherstorm - Manaforge Ultris', 1, 2, 0, 0),
+(@SGGUID+225, 'Dreaming Glory - Netherstorm - Forge Base', 1, 2, 0, 0),
+(@SGGUID+226, 'Dreaming Glory - Netherstorm - Socrethars Seat', 1, 2, 0, 0);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+227 AND @SGGUID+229;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+227, 'Dreaming Glory - Shadowmoon Valley - Netherwing Ledge', 1, 2, 0, 0),
+(@SGGUID+228, 'Dreaming Glory - Shadowmoon Valley - South', 1, 2, 0, 0),
+(@SGGUID+229, 'Dreaming Glory - Shadowmoon Valley - Middle', 1, 2, 0, 0);
+
 SET @GGUID := 183800; -- zangarmarsh
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
 (@GGUID+0,183045,530,1, -289.295562744140625, 7279.96337890625, 37.00469970703125, 1.082102894783020019, 0, 0, 0.51503753662109375, 0.857167601585388183,600,600),
@@ -3000,6 +3185,80 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+55,183045,530,1, 1462.0855712890625, 8654.7802734375, -15.7787981033325195, 4.293513298034667968, 0, 0, -0.8386697769165039, 0.544640243053436279,600,600),
 (@GGUID+56,183045,530,1, -366.46875, 8644.189453125, 33.833648681640625, 4.834563255310058593, 0, 0, -0.66261959075927734, 0.748956084251403808,600,600),
 (@GGUID+57,183045,530,1, 1175.7086181640625, 7606.22314453125, 36.5971527099609375, 4.293513298034667968, 0, 0, -0.8386697769165039, 0.544640243053436279,600,600);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+185 AND @SGGUID+189;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+185, 'Dreaming Glory - Zangarmarsh - Dead Mire', 1, 2, 0, 0),
+(@SGGUID+186, 'Dreaming Glory - Zangarmarsh - Feralfen Village', 1, 2, 0, 0),
+(@SGGUID+187, 'Dreaming Glory - Zangarmarsh - Funggor Cavern', 1, 2, 0, 0),
+(@SGGUID+188, 'Dreaming Glory - Zangarmarsh - Western Edge', 1, 2, 0, 0),
+(@SGGUID+189, 'Dreaming Glory - Zangarmarsh - Serpent Lake', 1, 2, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+185 AND @SGGUID+189;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Dreaming Glory - Zangarmarsh - Dead Mire
+(@SGGUID+185, @GGUID+10, -1),
+(@SGGUID+185, @GGUID+12, -1),
+(@SGGUID+185, @GGUID+23, -1),
+(@SGGUID+185, @GGUID+46, -1),
+(@SGGUID+185, @GGUID+31, -1),
+(@SGGUID+185, @GGUID+21, -1),
+(@SGGUID+185, @GGUID+29, -1),
+(@SGGUID+185, @GGUID+40, -1),
+(@SGGUID+185, @GGUID+52, -1),
+(@SGGUID+185, @GGUID+42, -1),
+(@SGGUID+185, @GGUID+17, -1),
+(@SGGUID+185, @GGUID+4, -1),
+-- Dreaming Glory - Zangarmarsh - Feralfen Village
+(@SGGUID+186, @GGUID+22, -1),
+(@SGGUID+186, @GGUID+16, -1),
+(@SGGUID+186, @GGUID+44, -1),
+(@SGGUID+186, @GGUID+9, -1),
+(@SGGUID+186, @GGUID+39, -1),
+(@SGGUID+186, @GGUID+32, -1),
+(@SGGUID+186, @GGUID+43, -1),
+(@SGGUID+186, @GGUID+0, -1),
+(@SGGUID+186, @GGUID+47, -1),
+(@SGGUID+186, @GGUID+54, -1),
+(@SGGUID+186, @GGUID+25, -1),
+(@SGGUID+186, @GGUID+34, -1),
+(@SGGUID+186, @GGUID+50, -1),
+-- Dreaming Glory - Zangarmarsh - Funggor Cavern
+(@SGGUID+187, @GGUID+33, -1),
+(@SGGUID+187, @GGUID+26, -1),
+(@SGGUID+187, @GGUID+49, -1),
+(@SGGUID+187, @GGUID+1, -1),
+(@SGGUID+187, @GGUID+51, -1),
+(@SGGUID+187, @GGUID+48, -1),
+(@SGGUID+187, @GGUID+41, -1),
+(@SGGUID+187, @GGUID+13, -1),
+(@SGGUID+187, @GGUID+15, -1),
+(@SGGUID+187, @GGUID+19, -1),
+(@SGGUID+187, @GGUID+27, -1),
+(@SGGUID+187, @GGUID+14, -1),
+(@SGGUID+187, @GGUID+20, -1),
+(@SGGUID+187, @GGUID+28, -1),
+(@SGGUID+187, @GGUID+11, -1),
+-- Dreaming Glory - Zangarmarsh - Western Edge
+(@SGGUID+188, @GGUID+56, -1),
+(@SGGUID+188, @GGUID+53, -1),
+(@SGGUID+188, @GGUID+24, -1),
+(@SGGUID+188, @GGUID+30, -1),
+(@SGGUID+188, @GGUID+45, -1),
+(@SGGUID+188, @GGUID+36, -1),
+(@SGGUID+188, @GGUID+8, -1),
+(@SGGUID+188, @GGUID+55, -1),
+(@SGGUID+188, @GGUID+18, -1),
+(@SGGUID+188, @GGUID+2, -1),
+(@SGGUID+188, @GGUID+37, -1),
+(@SGGUID+188, @GGUID+57, -1),
+-- Dreaming Glory - Zangarmarsh - Serpent Lake
+(@SGGUID+189, @GGUID+38, -1),
+(@SGGUID+189, @GGUID+3, -1),
+(@SGGUID+189, @GGUID+5, -1),
+(@SGGUID+189, @GGUID+6, -1),
+(@SGGUID+189, @GGUID+7, -1),
+(@SGGUID+189, @GGUID+35, -1);
 
 -- ragveil/flamecap
 SET @GGUID := 181300;

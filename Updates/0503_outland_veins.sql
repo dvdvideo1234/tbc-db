@@ -26,7 +26,7 @@ DELETE FROM gameobject WHERE Id IN(181555, 181556, 181569, 181570, 181557) AND m
 
 SET @SGGUID := 21300;
 
--- fel iron
+-- fel iron and khorium
 SET @GGUID := 184000;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
 (@GGUID+0,181555,530,1, 424.77484130859375, 8409.7392578125, -17.8846282958984375, 0.209439441561698913, 0, 0, 0.104528427124023437, 0.994521915912628173,600,600),
@@ -648,7 +648,7 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+616,181555,530,1, 449.74566650390625, 3545.31982421875, 67.33066558837890625, 0.663223206996917724, 0, 0, 0.325567245483398437, 0.945518851280212402,600,600),
 (@GGUID+617,181555,530,1, 2650.29248046875, 3822.087646484375, 140.0674285888671875, 0.523597896099090576, 0, 0, 0.258818626403808593, 0.965925931930541992,600,600);
 
--- adamantite and friends
+-- adamantite and khorium
 SET @GGUID := 187000;
 DELETE FROM gameobject WHERE guid BETWEEN 187000 AND 187999;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
