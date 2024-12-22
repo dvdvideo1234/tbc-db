@@ -2323,10 +2323,10 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+157 AND @SGGUID+160;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+157, 'Felweed - Hellfire Peninsula - NW', 1, 2, 0, 0),
-(@SGGUID+158, 'Felweed - Hellfire Peninsula - NE', 1, 1, 0, 0),
-(@SGGUID+159, 'Felweed - Hellfire Peninsula - SW', 1, 2, 0, 0),
-(@SGGUID+160, 'Felweed - Hellfire Peninsula - SE', 1, 2, 0, 0);
+(@SGGUID+157, 'Felweed - Hellfire Peninsula - NW', 1, 8, 0, 0),
+(@SGGUID+158, 'Felweed - Hellfire Peninsula - NE', 1, 10, 0, 0),
+(@SGGUID+159, 'Felweed - Hellfire Peninsula - SW', 1, 8, 0, 0),
+(@SGGUID+160, 'Felweed - Hellfire Peninsula - SE', 1, 13, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+157 AND @SGGUID+160;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2489,10 +2489,10 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+161 AND @SGGUID+164;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+161, 'Felweed - Nagrand - West', 1, 2, 0, 0),
-(@SGGUID+162, 'Felweed - Nagrand - East', 1, 1, 0, 0),
-(@SGGUID+163, 'Felweed - Nagrand - South', 1, 2, 0, 0),
-(@SGGUID+164, 'Felweed - Nagrand - North', 1, 2, 0, 0);
+(@SGGUID+161, 'Felweed - Nagrand - West', 1, 8, 0, 0),
+(@SGGUID+162, 'Felweed - Nagrand - East', 1, 11, 0, 0),
+(@SGGUID+163, 'Felweed - Nagrand - South', 1, 9, 0, 0),
+(@SGGUID+164, 'Felweed - Nagrand - North', 1, 8, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+161 AND @SGGUID+164;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2650,10 +2650,10 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+165 AND @SGGUID+168;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+165, 'Felweed - Terokkar - Auchindoun', 1, 2, 0, 0),
-(@SGGUID+166, 'Felweed - Terokkar - Bleeding Hollow Ruins', 1, 1, 0, 0),
-(@SGGUID+167, 'Felweed - Terokkar - Shattrath', 1, 2, 0, 0),
-(@SGGUID+168, 'Felweed - Terokkar - Raastok Glade', 1, 2, 0, 0);
+(@SGGUID+165, 'Felweed - Terokkar - Auchindoun', 1, 7, 0, 0),
+(@SGGUID+166, 'Felweed - Terokkar - Bleeding Hollow Ruins', 1, 2, 0, 0),
+(@SGGUID+167, 'Felweed - Terokkar - Shattrath', 1, 6, 0, 0),
+(@SGGUID+168, 'Felweed - Terokkar - Raastok Glade', 1, 6, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+165 AND @SGGUID+168;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2754,10 +2754,10 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+169 AND @SGGUID+172;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+169, 'Felweed - Netherstorm - Midrealm', 1, 2, 0, 0),
+(@SGGUID+169, 'Felweed - Netherstorm - Midrealm', 1, 1, 0, 0),
 (@SGGUID+170, 'Felweed - Netherstorm - Stormspire East', 1, 1, 0, 0),
 (@SGGUID+171, 'Felweed - Netherstorm - Stormspire West', 1, 2, 0, 0),
-(@SGGUID+172, 'Felweed - Netherstorm - Farside', 1, 2, 0, 0);
+(@SGGUID+172, 'Felweed - Netherstorm - Farside', 1, 1, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+169 AND @SGGUID+172;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2788,11 +2788,11 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+173 AND @SGGUID+177;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+173, 'Felweed - Shadowmoon - Entrance', 1, 2, 0, 0),
-(@SGGUID+174, 'Felweed - Shadowmoon - South', 1, 1, 0, 0),
-(@SGGUID+175, 'Felweed - Shadowmoon - Center', 1, 2, 0, 0),
-(@SGGUID+176, 'Felweed - Shadowmoon - North East', 1, 2, 0, 0),
-(@SGGUID+177, 'Felweed - Shadowmoon - Black Temple', 1, 2, 0, 0);
+(@SGGUID+173, 'Felweed - Shadowmoon - Entrance', 1, 4, 0, 0),
+(@SGGUID+174, 'Felweed - Shadowmoon - South', 1, 5, 0, 0),
+(@SGGUID+175, 'Felweed - Shadowmoon - Center', 1, 5, 0, 0),
+(@SGGUID+176, 'Felweed - Shadowmoon - North East', 1, 3, 0, 0),
+(@SGGUID+177, 'Felweed - Shadowmoon - Black Temple', 1, 5, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+173 AND @SGGUID+177;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2895,12 +2895,12 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+178 AND @SGGUID+184;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
 (@SGGUID+178, 'Felweed - BEM - Sylvanaar Thunderhold', 1, 2, 0, 0),
-(@SGGUID+179, 'Felweed - BEM - Vekhaar', 1, 1, 0, 0),
+(@SGGUID+179, 'Felweed - BEM - Vekhaar', 1, 2, 0, 0),
 (@SGGUID+180, 'Felweed - BEM - Ruuan', 1, 2, 0, 0),
 (@SGGUID+181, 'Felweed - BEM - Deaths Door', 1, 2, 0, 0),
-(@SGGUID+182, 'Felweed - BEM - Toshley Plateau', 1, 2, 0, 0),
-(@SGGUID+183, 'Felweed - BEM - Ogre South', 1, 2, 0, 0),
-(@SGGUID+184, 'Felweed - BEM - Ogre North', 1, 2, 0, 0);
+(@SGGUID+182, 'Felweed - BEM - Toshley Plateau', 1, 5, 0, 0),
+(@SGGUID+183, 'Felweed - BEM - Ogre South', 1, 6, 0, 0),
+(@SGGUID+184, 'Felweed - BEM - Ogre North', 1, 6, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+178 AND @SGGUID+184;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -3135,13 +3135,13 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+150 AND @SGGUID+156;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+150, 'Felweed - Zangarmarsh - Spawning Glen', 1, 2, 0, 0),
+(@SGGUID+150, 'Felweed - Zangarmarsh - Spawning Glen', 1, 4, 0, 0),
 (@SGGUID+151, 'Felweed - Zangarmarsh - Angorosh Stronghold', 1, 1, 0, 0),
-(@SGGUID+152, 'Felweed - Zangarmarsh - Daggerfen Village', 1, 2, 0, 0),
-(@SGGUID+153, 'Felweed - Zangarmarsh - Serpent Lake', 1, 2, 0, 0),
-(@SGGUID+154, 'Felweed - Zangarmarsh - Feralfen Village', 1, 2, 0, 0),
-(@SGGUID+155, 'Felweed - Zangarmarsh - Dead Mire', 1, 2, 0, 0),
-(@SGGUID+156, 'Felweed - Zangarmarsh - Umbrafen Lagoon', 1, 2, 0, 0);
+(@SGGUID+152, 'Felweed - Zangarmarsh - Daggerfen Village', 1, 4, 0, 0),
+(@SGGUID+153, 'Felweed - Zangarmarsh - Serpent Lake', 1, 5, 0, 0),
+(@SGGUID+154, 'Felweed - Zangarmarsh - Feralfen Village', 1, 3, 0, 0),
+(@SGGUID+155, 'Felweed - Zangarmarsh - Dead Mire', 1, 4, 0, 0),
+(@SGGUID+156, 'Felweed - Zangarmarsh - Umbrafen Lagoon', 1, 6, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+150 AND @SGGUID+156;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -3716,9 +3716,9 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+190 AND @SGGUID+194;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
 (@SGGUID+190, 'Dreaming Glory - Hellfire Peninsula - Forge Camps', 1, 2, 0, 0),
-(@SGGUID+191, 'Dreaming Glory - Hellfire Peninsula - ZethGor', 1, 2, 0, 0),
-(@SGGUID+192, 'Dreaming Glory - Hellfire Peninsula - Fissure West', 1, 2, 0, 0),
-(@SGGUID+193, 'Dreaming Glory - Hellfire Peninsula - Fissure East', 1, 2, 0, 0),
+(@SGGUID+191, 'Dreaming Glory - Hellfire Peninsula - ZethGor', 1, 3, 0, 0),
+(@SGGUID+192, 'Dreaming Glory - Hellfire Peninsula - Fissure West', 1, 3, 0, 0),
+(@SGGUID+193, 'Dreaming Glory - Hellfire Peninsula - Fissure East', 1, 3, 0, 0),
 (@SGGUID+194, 'Dreaming Glory - Hellfire Peninsula - NW', 1, 2, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+190 AND @SGGUID+194;
@@ -3786,12 +3786,12 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+195, 'Dreaming Glory - Terokkar - Bleeding Hollow Ruins', 1, 2, 0, 0),
 (@SGGUID+196, 'Dreaming Glory - Terokkar - Southern Ledge', 1, 2, 0, 0),
 (@SGGUID+197, 'Dreaming Glory - Terokkar - Veil Shalas', 1, 2, 0, 0),
-(@SGGUID+198, 'Dreaming Glory - Terokkar - Skettis', 1, 2, 0, 0),
+(@SGGUID+198, 'Dreaming Glory - Terokkar - Skettis', 1, 3, 0, 0),
 (@SGGUID+199, 'Dreaming Glory - Terokkar - Veil Skith', 1, 2, 0, 0),
 (@SGGUID+200, 'Dreaming Glory - Terokkar - Stonebreaker Hold', 1, 2, 0, 0),
-(@SGGUID+201, 'Dreaming Glory - Terokkar - Cenarion Thicket', 1, 2, 0, 0),
-(@SGGUID+202, 'Dreaming Glory - Terokkar - Bonechewer Ruins', 1, 2, 0, 0),
-(@SGGUID+203, 'Dreaming Glory - Terokkar - Firewing Point', 1, 2, 0, 0);
+(@SGGUID+201, 'Dreaming Glory - Terokkar - Cenarion Thicket', 1, 3, 0, 0),
+(@SGGUID+202, 'Dreaming Glory - Terokkar - Bonechewer Ruins', 1, 1, 0, 0),
+(@SGGUID+203, 'Dreaming Glory - Terokkar - Firewing Point', 1, 1, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+195 AND @SGGUID+203;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -3884,11 +3884,11 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+204 AND @SGGUID+208;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+204, 'Dreaming Glory - Nagrand - Twilight Ridge', 1, 2, 0, 0),
-(@SGGUID+205, 'Dreaming Glory - Nagrand - Oshugun', 1, 2, 0, 0),
-(@SGGUID+206, 'Dreaming Glory - Nagrand - North', 1, 2, 0, 0),
-(@SGGUID+207, 'Dreaming Glory - Nagrand - Ring of Trials', 1, 2, 0, 0),
-(@SGGUID+208, 'Dreaming Glory - Nagrand - Killsorrow Fortress', 1, 2, 0, 0);
+(@SGGUID+204, 'Dreaming Glory - Nagrand - Twilight Ridge', 1, 4, 0, 0),
+(@SGGUID+205, 'Dreaming Glory - Nagrand - Oshugun', 1, 7, 0, 0),
+(@SGGUID+206, 'Dreaming Glory - Nagrand - North', 1, 6, 0, 0),
+(@SGGUID+207, 'Dreaming Glory - Nagrand - Ring of Trials', 1, 5, 0, 0),
+(@SGGUID+208, 'Dreaming Glory - Nagrand - Killsorrow Fortress', 1, 3, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+204 AND @SGGUID+208;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -3999,14 +3999,14 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+209 AND @SGGUID+216;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+209, 'Dreaming Glory - BEM - Sylvanaar', 1, 2, 0, 0),
+(@SGGUID+209, 'Dreaming Glory - BEM - Sylvanaar', 1, 1, 0, 0),
 (@SGGUID+210, 'Dreaming Glory - BEM - Thunderlord Stronghold', 1, 2, 0, 0),
-(@SGGUID+211, 'Dreaming Glory - BEM - Toshley Plateau', 1, 2, 0, 0),
-(@SGGUID+212, 'Dreaming Glory - BEM - Vekhaar Stand', 1, 2, 0, 0),
-(@SGGUID+213, 'Dreaming Glory - BEM - Ogrila', 1, 2, 0, 0),
+(@SGGUID+211, 'Dreaming Glory - BEM - Toshley Plateau', 1, 5, 0, 0),
+(@SGGUID+212, 'Dreaming Glory - BEM - Vekhaar Stand', 1, 1, 0, 0),
+(@SGGUID+213, 'Dreaming Glory - BEM - Ogrila', 1, 4, 0, 0),
 (@SGGUID+214, 'Dreaming Glory - BEM - Bashir', 1, 2, 0, 0),
-(@SGGUID+215, 'Dreaming Glory - BEM - Ravens Wood', 1, 2, 0, 0),
-(@SGGUID+216, 'Dreaming Glory - BEM - Ruuan Weald', 1, 2, 0, 0);
+(@SGGUID+215, 'Dreaming Glory - BEM - Ravens Wood', 1, 3, 0, 0),
+(@SGGUID+216, 'Dreaming Glory - BEM - Ruuan Weald', 1, 3, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+209 AND @SGGUID+216;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -4106,14 +4106,14 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+217 AND @SGGUID+226;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+217, 'Dreaming Glory - Netherstorm - Area 52', 1, 2, 0, 0),
+(@SGGUID+217, 'Dreaming Glory - Netherstorm - Area 52', 1, 3, 0, 0),
 (@SGGUID+218, 'Dreaming Glory - Netherstorm - Manaforge Coruu', 1, 2, 0, 0),
 (@SGGUID+219, 'Dreaming Glory - Netherstorm - Manaforge Duro', 1, 2, 0, 0),
-(@SGGUID+220, 'Dreaming Glory - Netherstorm - Manaforge Ara', 1, 2, 0, 0),
+(@SGGUID+220, 'Dreaming Glory - Netherstorm - Manaforge Ara', 1, 1, 0, 0),
 (@SGGUID+221, 'Dreaming Glory - Netherstorm - Midrealm', 1, 2, 0, 0),
 (@SGGUID+222, 'Dreaming Glory - Netherstorm - Stormspire', 1, 2, 0, 0),
 (@SGGUID+223, 'Dreaming Glory - Netherstorm - Farfield', 1, 2, 0, 0),
-(@SGGUID+224, 'Dreaming Glory - Netherstorm - Manaforge Ultris', 1, 2, 0, 0),
+(@SGGUID+224, 'Dreaming Glory - Netherstorm - Manaforge Ultris', 1, 3, 0, 0),
 (@SGGUID+225, 'Dreaming Glory - Netherstorm - Forge Base', 1, 2, 0, 0),
 (@SGGUID+226, 'Dreaming Glory - Netherstorm - Socrethars Seat', 1, 2, 0, 0);
 
@@ -4216,9 +4216,9 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+227 AND @SGGUID+229;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+227, 'Dreaming Glory - Shadowmoon Valley - Netherwing Ledge', 1, 2, 0, 0),
-(@SGGUID+228, 'Dreaming Glory - Shadowmoon Valley - South', 1, 2, 0, 0),
-(@SGGUID+229, 'Dreaming Glory - Shadowmoon Valley - Middle', 1, 2, 0, 0);
+(@SGGUID+227, 'Dreaming Glory - Shadowmoon Valley - Netherwing Ledge', 1, 4, 0, 0),
+(@SGGUID+228, 'Dreaming Glory - Shadowmoon Valley - South', 1, 3, 0, 0),
+(@SGGUID+229, 'Dreaming Glory - Shadowmoon Valley - Middle', 1, 4, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+227 AND @SGGUID+229;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -4330,10 +4330,10 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+185 AND @SGGUID+189;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+185, 'Dreaming Glory - Zangarmarsh - Dead Mire', 1, 2, 0, 0),
-(@SGGUID+186, 'Dreaming Glory - Zangarmarsh - Feralfen Village', 1, 2, 0, 0),
-(@SGGUID+187, 'Dreaming Glory - Zangarmarsh - Funggor Cavern', 1, 2, 0, 0),
-(@SGGUID+188, 'Dreaming Glory - Zangarmarsh - Western Edge', 1, 2, 0, 0),
+(@SGGUID+185, 'Dreaming Glory - Zangarmarsh - Dead Mire', 1, 3, 0, 0),
+(@SGGUID+186, 'Dreaming Glory - Zangarmarsh - Feralfen Village', 1, 3, 0, 0),
+(@SGGUID+187, 'Dreaming Glory - Zangarmarsh - Funggor Cavern', 1, 4, 0, 0),
+(@SGGUID+188, 'Dreaming Glory - Zangarmarsh - Western Edge', 1, 3, 0, 0),
 (@SGGUID+189, 'Dreaming Glory - Zangarmarsh - Serpent Lake', 1, 2, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+185 AND @SGGUID+189;
