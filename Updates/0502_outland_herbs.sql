@@ -38,19 +38,31 @@ https://www.wowhead.com/tbc/object=185881/netherdust-bush
 
 initial state in outland (excludes quel danas):
 
-108 - terocone - 		124
-107 - nightmare vine - 	112
-92 - netherbloom -		121
-83 - dreamfoil			102
-102 - golden sansam		127
-42 - mountain silversage 57
-34 - blindweed			 59
-4 - liferoot			  9
-98 - hellfire spineleaf	 98
-433 + 69 - felweed		599 + 117
-300 + 17 - dreaming glory 435 + 57
-116 - ragveil			174
-86 - netherdust bush	86
+108 - terocone -                 124
+107 - nightmare vine -           112
+92 - netherbloom -               121
+83 - dreamfoil -                 102
+102 - golden sansam	-            127
+42 - mountain silversage -        57
+34 - blindweed -                  59
+4 - liferoot -                     9
+98 - hellfire spineleaf	-         98
+433 + 69 - felweed -       599 + 117
+300 + 17 - dreaming glory - 435 + 57
+116 - ragveil -                  174
+86 - netherdust bush -            86
+
+groups:
+1 - netherbloom - 28
+2 - terocone - 29
+1 - nightmare vine - 18
+2 - dreamfoil - 21
+3 - golden sansam - 24
+1 - mountain silversage - 20
+1 - liferoot - 4
+7 - felweed - 48
+7 - dreaming glory - 47
+1 - ragveil - 17
 */
 /*
 select count(*) from gameobject where id  = 181277 AND map=530 AND position_x NOT BETWEEN 11400 AND 13100; -- terocone
@@ -69,7 +81,11 @@ select count(*) from gameobject a join gameobject_spawn_entry b on a.guid=b.guid
 select count(*) from gameobject where id  = 185881 AND map=530 AND position_x NOT BETWEEN 11400 AND 13100; -- netherdust bush
 select count(*) from gameobject where id  = 181271 AND map=530 AND position_x NOT BETWEEN 11400 AND 13100; -- dreaming glory - generic
 select count(*) from gameobject where id  = 183045 AND map=530 AND position_x NOT BETWEEN 11400 AND 13100; -- dreaming glory - zangar
+
+select count(distinct a.id) from spawn_group a join spawn_group_spawn b on a.id=b.id join gameobject c on b.guid=c.guid where c.id=176584;
+select count(distinct a.id) from spawn_group a join spawn_group_spawn b on a.id=b.id join spawn_group_entry c on a.id=c.id where c.entry=183043;
 */
+
 -- wave 1
 DELETE FROM gameobject WHERE Id IN(181277,181280,181279) AND map=530 AND position_x NOT BETWEEN 11400 AND 13100;
 -- wave 2
@@ -4987,3 +5003,160 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+102,176584,530,1, -964.2918701171875, 3165.235595703125, 30.276123046875, 4.118979454040527343, 0, 0, -0.88294696807861328, 0.469472706317901611,600,600),
 (@GGUID+103,176584,530,1, -146.110458374023437, 3708.09375, 57.39603042602539062, -1.60570323467254638, 0, 0, 0.719339907169342041, -0.69465827941894531,600,600),
 (@GGUID+104,176584,530,1, -1059.323486328125, 2441.263427734375, 17.04703330993652343, 5.672322273254394531, 0, 0, -0.3007049560546875, 0.953717231750488281,600,600);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+230 AND @SGGUID+238;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+230, 'Dreamfoil - Zangarmarsh - Portal', 1, 1, 0, 0),
+(@SGGUID+231, 'Dreamfoil - Zangarmarsh - Hewn Bog', 1, 1, 0, 0),
+(@SGGUID+232, 'Dreamfoil - Zangarmarsh - Marshlight', 1, 1, 0, 0),
+(@SGGUID+233, 'Dreamfoil - Zangarmarsh - Quagg Ridge', 1, 1, 0, 0),
+(@SGGUID+234, 'Dreamfoil - Zangarmarsh - Spikes', 1, 1, 0, 0),
+(@SGGUID+235, 'Dreamfoil - Zangarmarsh - Bloodscale Grounds', 1, 1, 0, 0),
+(@SGGUID+236, 'Dreamfoil - Zangarmarsh - Umbrafen', 1, 1, 0, 0),
+(@SGGUID+237, 'Dreamfoil - Zangarmarsh - Dead Mire Outer', 1, 2, 0, 0),
+(@SGGUID+238, 'Dreamfoil - Zangarmarsh - Dead Mire Inner', 1, 2, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+230 AND @SGGUID+238;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Dreamfoil - Zangarmarsh - Portal
+(@SGGUID+230, @GGUID+28, -1),
+(@SGGUID+230, @GGUID+13, -1),
+(@SGGUID+230, @GGUID+1, -1),
+(@SGGUID+230, @GGUID+67, -1),
+-- Dreamfoil - Zangarmarsh - Hewn Bog
+(@SGGUID+231, @GGUID+47, -1),
+(@SGGUID+231, @GGUID+5, -1),
+(@SGGUID+231, @GGUID+86, -1),
+-- Dreamfoil - Zangarmarsh - Marshlight
+(@SGGUID+232, @GGUID+44, -1),
+(@SGGUID+232, @GGUID+7, -1),
+(@SGGUID+232, @GGUID+83, -1),
+-- Dreamfoil - Zangarmarsh - Quagg Ridge
+(@SGGUID+233, @GGUID+73, -1),
+(@SGGUID+233, @GGUID+62, -1),
+(@SGGUID+233, @GGUID+78, -1),
+(@SGGUID+233, @GGUID+14, -1),
+-- Dreamfoil - Zangarmarsh - Spikes
+(@SGGUID+234, @GGUID+50, -1),
+(@SGGUID+234, @GGUID+20, -1),
+(@SGGUID+234, @GGUID+18, -1),
+-- Dreamfoil - Zangarmarsh - Bloodscale Grounds
+(@SGGUID+235, @GGUID+11, -1),
+(@SGGUID+235, @GGUID+59, -1),
+(@SGGUID+235, @GGUID+71, -1),
+-- Dreamfoil - Zangarmarsh - Umbrafen
+(@SGGUID+236, @GGUID+22, -1),
+(@SGGUID+236, @GGUID+4, -1),
+(@SGGUID+236, @GGUID+25, -1),
+(@SGGUID+236, @GGUID+63, -1),
+-- Dreamfoil - Zangarmarsh - Dead Mire Outer
+(@SGGUID+237, @GGUID+74, -1),
+(@SGGUID+237, @GGUID+56, -1),
+(@SGGUID+237, @GGUID+30, -1),
+(@SGGUID+237, @GGUID+41, -1),
+(@SGGUID+237, @GGUID+40, -1),
+(@SGGUID+237, @GGUID+42, -1),
+(@SGGUID+237, @GGUID+88, -1),
+(@SGGUID+237, @GGUID+27, -1),
+(@SGGUID+237, @GGUID+97, -1),
+-- Dreamfoil - Zangarmarsh - Dead Mire Inner
+(@SGGUID+238, @GGUID+43, -1),
+(@SGGUID+238, @GGUID+26, -1),
+(@SGGUID+238, @GGUID+48, -1),
+(@SGGUID+238, @GGUID+65, -1),
+(@SGGUID+238, @GGUID+3, -1),
+(@SGGUID+238, @GGUID+66, -1),
+(@SGGUID+238, @GGUID+37, -1),
+(@SGGUID+238, @GGUID+6, -1);
+
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+239 AND @SGGUID+250;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+239, 'Dreamfoil - Hellfire Peninsula - Crystal Ridge', 1, 1, 0, 0),
+(@SGGUID+240, 'Dreamfoil - Hellfire Peninsula - Ruins of Shanaar', 1, 1, 0, 0),
+(@SGGUID+241, 'Dreamfoil - Hellfire Peninsula - Maghar', 1, 1, 0, 0),
+(@SGGUID+242, 'Dreamfoil - Hellfire Peninsula - Falcon Watch', 1, 1, 0, 0),
+(@SGGUID+243, 'Dreamfoil - Hellfire Peninsula - Fissure', 1, 1, 0, 0),
+(@SGGUID+244, 'Dreamfoil - Hellfire Peninsula - Ramparts West', 1, 1, 0, 0),
+(@SGGUID+245, 'Dreamfoil - Hellfire Peninsula - Ramparts East', 1, 1, 0, 0),
+(@SGGUID+246, 'Dreamfoil - Hellfire Peninsula - Expedition Armory', 1, 1, 0, 0),
+(@SGGUID+247, 'Dreamfoil - Hellfire Peninsula - Honor Hold', 1, 2, 0, 0),
+(@SGGUID+248, 'Dreamfoil - Hellfire Peninsula - ZethGor', 1, 1, 0, 0),
+(@SGGUID+249, 'Dreamfoil - Hellfire Peninsula - Forge Camps', 1, 1, 0, 0),
+(@SGGUID+250, 'Dreamfoil - Hellfire Peninsula - Ramparts North', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+239 AND @SGGUID+250;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Dreamfoil - Hellfire Peninsula - Crystal Ridge
+(@SGGUID+239, @GGUID+33, -1),
+(@SGGUID+239, @GGUID+46, -1),
+(@SGGUID+239, @GGUID+45, -1),
+(@SGGUID+239, @GGUID+36, -1),
+(@SGGUID+239, @GGUID+53, -1),
+-- Dreamfoil - Hellfire Peninsula - Ruins of Shanaar
+(@SGGUID+240, @GGUID+89, -1),
+(@SGGUID+240, @GGUID+61, -1),
+(@SGGUID+240, @GGUID+94, -1),
+(@SGGUID+240, @GGUID+90, -1),
+(@SGGUID+240, @GGUID+58, -1),
+-- Dreamfoil - Hellfire Peninsula - Maghar
+(@SGGUID+241, @GGUID+34, -1),
+(@SGGUID+241, @GGUID+77, -1),
+(@SGGUID+241, @GGUID+103, -1),
+(@SGGUID+241, @GGUID+72, -1),
+(@SGGUID+241, @GGUID+70, -1),
+(@SGGUID+241, @GGUID+39, -1),
+-- Dreamfoil - Hellfire Peninsula - Falcon Watch
+(@SGGUID+242, @GGUID+49, -1),
+(@SGGUID+242, @GGUID+16, -1),
+(@SGGUID+242, @GGUID+54, -1),
+(@SGGUID+242, @GGUID+9, -1),
+-- Dreamfoil - Hellfire Peninsula - Fissure
+(@SGGUID+243, @GGUID+68, -1),
+(@SGGUID+243, @GGUID+69, -1),
+(@SGGUID+243, @GGUID+95, -1),
+(@SGGUID+243, @GGUID+51, -1),
+(@SGGUID+243, @GGUID+91, -1),
+-- Dreamfoil - Hellfire Peninsula - Ramparts West
+(@SGGUID+244, @GGUID+29, -1),
+(@SGGUID+244, @GGUID+82, -1),
+(@SGGUID+244, @GGUID+101, -1),
+(@SGGUID+244, @GGUID+23, -1),
+-- Dreamfoil - Hellfire Peninsula - Ramparts East
+(@SGGUID+245, @GGUID+93, -1),
+(@SGGUID+245, @GGUID+102, -1),
+(@SGGUID+245, @GGUID+17, -1),
+(@SGGUID+245, @GGUID+55, -1),
+(@SGGUID+245, @GGUID+32, -1),
+-- Dreamfoil - Hellfire Peninsula - Expedition Armory
+(@SGGUID+246, @GGUID+81, -1),
+(@SGGUID+246, @GGUID+104, -1),
+(@SGGUID+246, @GGUID+98	, -1),
+(@SGGUID+246, @GGUID+15, -1),
+-- Dreamfoil - Hellfire Peninsula - Honor Hold
+(@SGGUID+247, @GGUID+85, -1),
+(@SGGUID+247, @GGUID+57, -1),
+(@SGGUID+247, @GGUID+84, -1),
+(@SGGUID+247, @GGUID+38, -1),
+(@SGGUID+247, @GGUID+2, -1),
+(@SGGUID+247, @GGUID+76, -1),
+(@SGGUID+247, @GGUID+8, -1),
+-- Dreamfoil - Hellfire Peninsula - ZethGor
+(@SGGUID+248, @GGUID+79, -1),
+(@SGGUID+248, @GGUID+31, -1),
+(@SGGUID+248, @GGUID+60, -1),
+(@SGGUID+248, @GGUID+99, -1),
+(@SGGUID+248, @GGUID+64, -1),
+(@SGGUID+248, @GGUID+19, -1),
+-- Dreamfoil - Hellfire Peninsula - Forge Camps
+(@SGGUID+249, @GGUID+21, -1),
+(@SGGUID+249, @GGUID+0, -1),
+(@SGGUID+249, @GGUID+100, -1),
+(@SGGUID+249, @GGUID+10, -1),
+(@SGGUID+249, @GGUID+92, -1),
+(@SGGUID+249, @GGUID+75, -1),
+-- Dreamfoil - Hellfire Peninsula - Ramparts North
+(@SGGUID+250, @GGUID+52, -1),
+(@SGGUID+250, @GGUID+12, -1),
+(@SGGUID+250, @GGUID+87, -1),
+(@SGGUID+250, @GGUID+24, -1);
+
