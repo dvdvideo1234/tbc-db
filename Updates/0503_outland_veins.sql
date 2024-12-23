@@ -997,12 +997,150 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+266, 'Fel Iron Ore - Terokkar - Veil Shalas', 1, 1, 0, 0),
 (@SGGUID+267, 'Fel Iron Ore - Terokkar - Raastok Glade', 1, 1, 0, 0);
 
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+262 AND @SGGUID+267;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Fel Iron Ore - Terokkar - Bleeding Hollow Ruins
+(@SGGUID+262, @GGUID+509, -1),
+(@SGGUID+262, @GGUID+426, -1),
+(@SGGUID+262, @GGUID+316, -1),
+(@SGGUID+262, @GGUID+370, -1),
+(@SGGUID+262, @GGUID+158, -1),
+(@SGGUID+262, @GGUID+287, -1),
+-- Fel Iron Ore - Terokkar - Auchindoun
+(@SGGUID+263, @GGUID+417, -1),
+(@SGGUID+263, @GGUID+101, -1),
+(@SGGUID+263, @GGUID+293, -1),
+(@SGGUID+263, @GGUID+510, -1),
+(@SGGUID+263, @GGUID+571, -1),
+(@SGGUID+263, @GGUID+177, -1),
+(@SGGUID+263, @GGUID+416, -1),
+(@SGGUID+263, @GGUID+362, -1),
+(@SGGUID+263, @GGUID+423, -1),
+(@SGGUID+263, @GGUID+348, -1),
+(@SGGUID+263, @GGUID+333, -1),
+-- Fel Iron Ore - Terokkar - Around Stonebreaker
+(@SGGUID+264, @GGUID+301, -1),
+(@SGGUID+264, @GGUID+99, -1),
+(@SGGUID+264, @GGUID+373, -1),
+(@SGGUID+264, @GGUID+94, -1),
+(@SGGUID+264, @GGUID+553, -1),
+(@SGGUID+264, @GGUID+438, -1),
+(@SGGUID+264, @GGUID+79, -1),
+(@SGGUID+264, @GGUID+359, -1),
+(@SGGUID+264, @GGUID+366, -1),
+(@SGGUID+264, @GGUID+217, -1),
+-- Fel Iron Ore - Terokkar - Cenarion Thicket
+(@SGGUID+265, @GGUID+568, -1),
+(@SGGUID+265, @GGUID+567, -1),
+(@SGGUID+265, @GGUID+572, -1),
+(@SGGUID+265, @GGUID+300, -1),
+(@SGGUID+265, @GGUID+61, -1),
+(@SGGUID+265, @GGUID+511, -1),
+(@SGGUID+265, @GGUID+164, -1),
+(@SGGUID+265, @GGUID+391, -1),
+(@SGGUID+265, @GGUID+456, -1),
+(@SGGUID+265, @GGUID+429, -1),
+(@SGGUID+265, @GGUID+192, -1),
+-- Fel Iron Ore - Terokkar - Veil Shalas
+(@SGGUID+266, @GGUID+405, -1),
+(@SGGUID+266, @GGUID+403, -1),
+(@SGGUID+266, @GGUID+190, -1),
+(@SGGUID+266, @GGUID+75, -1),
+(@SGGUID+266, @GGUID+396, -1),
+(@SGGUID+266, @GGUID+401, -1),
+-- Fel Iron Ore - Terokkar - Raastok Glade
+(@SGGUID+267, @GGUID+561, -1),
+(@SGGUID+267, @GGUID+198, -1),
+(@SGGUID+267, @GGUID+462, -1),
+(@SGGUID+267, @GGUID+110, -1),
+(@SGGUID+267, @GGUID+81, -1),
+(@SGGUID+267, @GGUID+437, -1),
+(@SGGUID+267, @GGUID+43, -1),
+(@SGGUID+267, @GGUID+383, -1),
+(@SGGUID+267, @GGUID+324, -1),
+(@SGGUID+267, @GGUID+131, -1),
+(@SGGUID+267, @GGUID+551, -1),
+(@SGGUID+267, @GGUID+275, -1),
+(@SGGUID+267, @GGUID+573, -1),
+(@SGGUID+267, @GGUID+340, -1),
+(@SGGUID+267, @GGUID+210, -1),
+(@SGGUID+267, @GGUID+360, -1);
+
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+268 AND @SGGUID+271;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
 (@SGGUID+268, 'Fel Iron Ore - Nagrand - Oshugun', 1, 1, 0, 0),
 (@SGGUID+269, 'Fel Iron Ore - Nagrand - Warmaul Hill', 1, 1, 0, 0),
 (@SGGUID+270, 'Fel Iron Ore - Nagrand - Ring of Trials', 1, 1, 0, 0),
 (@SGGUID+271, 'Fel Iron Ore - Nagrand - Kilsorrow Fortress', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+268 AND @SGGUID+271;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Fel Iron Ore - Nagrand - Oshugun
+(@SGGUID+268, @GGUID+225, -1),
+(@SGGUID+268, @GGUID+117, -1),
+(@SGGUID+268, @GGUID+199, -1),
+(@SGGUID+268, @GGUID+392, -1),
+(@SGGUID+268, @GGUID+165, -1),
+(@SGGUID+268, @GGUID+59, -1),
+(@SGGUID+268, @GGUID+609, -1),
+(@SGGUID+268, @GGUID+517, -1),
+(@SGGUID+268, @GGUID+555, -1),
+(@SGGUID+268, @GGUID+332, -1),
+(@SGGUID+268, @GGUID+215, -1),
+(@SGGUID+268, @GGUID+524, -1),
+(@SGGUID+268, @GGUID+313, -1),
+(@SGGUID+268, @GGUID+614, -1),
+(@SGGUID+268, @GGUID+147, -1),
+-- Fel Iron Ore - Nagrand - Warmaul Hill
+(@SGGUID+269, @GGUID+171, -1),
+(@SGGUID+269, @GGUID+513, -1),
+(@SGGUID+269, @GGUID+17, -1),
+(@SGGUID+269, @GGUID+583, -1),
+(@SGGUID+269, @GGUID+269, -1),
+(@SGGUID+269, @GGUID+47, -1),
+(@SGGUID+269, @GGUID+564, -1),
+(@SGGUID+269, @GGUID+212, -1),
+(@SGGUID+269, @GGUID+209, -1),
+(@SGGUID+269, @GGUID+342, -1),
+(@SGGUID+269, @GGUID+530, -1),
+(@SGGUID+269, @GGUID+338, -1),
+(@SGGUID+269, @GGUID+8, -1),
+(@SGGUID+269, @GGUID+341, -1),
+(@SGGUID+269, @GGUID+16, -1),
+(@SGGUID+269, @GGUID+414, -1),
+(@SGGUID+269, @GGUID+235, -1),
+(@SGGUID+269, @GGUID+286, -1),
+(@SGGUID+269, @GGUID+244, -1),
+(@SGGUID+269, @GGUID+296, -1),
+(@SGGUID+269, @GGUID+226, -1),
+(@SGGUID+269, @GGUID+595, -1),
+(@SGGUID+269, @GGUID+529, -1),
+-- Fel Iron Ore - Nagrand - Ring of Trials
+(@SGGUID+270, @GGUID+219, -1),
+(@SGGUID+270, @GGUID+193, -1),
+(@SGGUID+270, @GGUID+357, -1),
+(@SGGUID+270, @GGUID+542, -1),
+(@SGGUID+270, @GGUID+161, -1),
+(@SGGUID+270, @GGUID+113, -1),
+(@SGGUID+270, @GGUID+584, -1),
+(@SGGUID+270, @GGUID+119, -1),
+(@SGGUID+270, @GGUID+562, -1),
+(@SGGUID+270, @GGUID+222, -1),
+(@SGGUID+270, @GGUID+284, -1),
+-- Fel Iron Ore - Nagrand - Kilsorrow Fortress
+(@SGGUID+271, @GGUID+253, -1),
+(@SGGUID+271, @GGUID+379, -1),
+(@SGGUID+271, @GGUID+7, -1),
+(@SGGUID+271, @GGUID+518, -1),
+(@SGGUID+271, @GGUID+178, -1),
+(@SGGUID+271, @GGUID+70, -1),
+(@SGGUID+271, @GGUID+57, -1),
+(@SGGUID+271, @GGUID+280, -1),
+(@SGGUID+271, @GGUID+74, -1),
+(@SGGUID+271, @GGUID+574, -1),
+(@SGGUID+271, @GGUID+194, -1),
+(@SGGUID+271, @GGUID+107, -1),
+(@SGGUID+271, @GGUID+186, -1);
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+272 AND @SGGUID+279;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
@@ -1015,6 +1153,89 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+278, 'Fel Iron Ore - BEM - Ruuan Weald', 1, 1, 0, 0),
 (@SGGUID+279, 'Fel Iron Ore - BEM - Ravens Wood', 1, 1, 0, 0);
 
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+272 AND @SGGUID+279;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Fel Iron Ore - BEM - Sylvanaar
+(@SGGUID+272, @GGUID+233, -1),
+(@SGGUID+272, @GGUID+14, -1),
+(@SGGUID+272, @GGUID+266, -1),
+(@SGGUID+272, @GGUID+314, -1),
+(@SGGUID+272, @GGUID+432, -1),
+(@SGGUID+272, @GGUID+308, -1),
+-- Fel Iron Ore - BEM - Thunderlord Stronghold
+(@SGGUID+273, @GGUID+239, -1),
+(@SGGUID+273, @GGUID+459, -1),
+(@SGGUID+273, @GGUID+601, -1),
+(@SGGUID+273, @GGUID+458, -1),
+-- Fel Iron Ore - BEM - Toshley Plateau
+(@SGGUID+274, @GGUID+144, -1),
+(@SGGUID+274, @GGUID+196, -1),
+(@SGGUID+274, @GGUID+470, -1),
+(@SGGUID+274, @GGUID+515, -1),
+(@SGGUID+274, @GGUID+329, -1),
+(@SGGUID+274, @GGUID+570, -1),
+(@SGGUID+274, @GGUID+139, -1),
+(@SGGUID+274, @GGUID+206, -1),
+(@SGGUID+274, @GGUID+473, -1),
+(@SGGUID+274, @GGUID+494, -1),
+(@SGGUID+274, @GGUID+189, -1),
+(@SGGUID+274, @GGUID+512, -1),
+(@SGGUID+274, @GGUID+548, -1),
+(@SGGUID+274, @GGUID+88, -1),
+(@SGGUID+274, @GGUID+363, -1),
+(@SGGUID+274, @GGUID+602, -1),
+(@SGGUID+274, @GGUID+170, -1),
+(@SGGUID+274, @GGUID+84, -1),
+-- Fel Iron Ore - BEM - Vekhaar Stand
+(@SGGUID+275, @GGUID+544, -1),
+(@SGGUID+275, @GGUID+457, -1),
+(@SGGUID+275, @GGUID+352, -1),
+(@SGGUID+275, @GGUID+54, -1),
+(@SGGUID+275, @GGUID+230, -1),
+(@SGGUID+275, @GGUID+474, -1),
+(@SGGUID+275, @GGUID+98, -1),
+(@SGGUID+275, @GGUID+448, -1),
+-- Fel Iron Ore - BEM - Bloodmaul Outpost
+(@SGGUID+276, @GGUID+28, -1),
+(@SGGUID+276, @GGUID+446, -1),
+(@SGGUID+276, @GGUID+605, -1),
+(@SGGUID+276, @GGUID+255, -1),
+(@SGGUID+276, @GGUID+103, -1),
+(@SGGUID+276, @GGUID+469, -1),
+(@SGGUID+276, @GGUID+49, -1),
+(@SGGUID+276, @GGUID+297, -1),
+(@SGGUID+276, @GGUID+265, -1),
+-- Fel Iron Ore - BEM - Gruuls Lair
+(@SGGUID+277, @GGUID+237, -1),
+(@SGGUID+277, @GGUID+200, -1),
+(@SGGUID+277, @GGUID+579, -1),
+(@SGGUID+277, @GGUID+545, -1),
+(@SGGUID+277, @GGUID+295, -1),
+(@SGGUID+277, @GGUID+309, -1),
+(@SGGUID+277, @GGUID+267, -1),
+(@SGGUID+277, @GGUID+310, -1),
+(@SGGUID+277, @GGUID+89, -1),
+(@SGGUID+277, @GGUID+506, -1),
+(@SGGUID+277, @GGUID+449, -1),
+(@SGGUID+277, @GGUID+304, -1),
+(@SGGUID+277, @GGUID+547, -1),
+-- Fel Iron Ore - BEM - Ruuan Weald
+(@SGGUID+278, @GGUID+97, -1),
+(@SGGUID+278, @GGUID+450, -1),
+(@SGGUID+278, @GGUID+566, -1),
+(@SGGUID+278, @GGUID+493, -1),
+(@SGGUID+278, @GGUID+452, -1),
+(@SGGUID+278, @GGUID+120, -1),
+(@SGGUID+278, @GGUID+455, -1),
+(@SGGUID+278, @GGUID+273, -1),
+-- Fel Iron Ore - BEM - Ravens Wood
+(@SGGUID+279, @GGUID+611, -1),
+(@SGGUID+279, @GGUID+41, -1),
+(@SGGUID+279, @GGUID+596, -1),
+(@SGGUID+279, @GGUID+347, -1),
+(@SGGUID+279, @GGUID+504, -1),
+(@SGGUID+279, @GGUID+246, -1);
+
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+280 AND @SGGUID+286;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
 (@SGGUID+280, 'Fel Iron Ore - Netherstorm - Area 52', 1, 1, 0, 0),
@@ -1024,6 +1245,64 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+284, 'Fel Iron Ore - Netherstorm - Ruins of Farahlon', 1, 1, 0, 0),
 (@SGGUID+285, 'Fel Iron Ore - Netherstorm - Forge Bases', 1, 1, 0, 0),
 (@SGGUID+286, 'Fel Iron Ore - Netherstorm - Farfield', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+280 AND @SGGUID+286;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Fel Iron Ore - Netherstorm - Area 52
+(@SGGUID+280, @GGUID+187, -1),
+(@SGGUID+280, @GGUID+492, -1),
+(@SGGUID+280, @GGUID+592, -1),
+(@SGGUID+280, @GGUID+358, -1),
+(@SGGUID+280, @GGUID+18, -1),
+(@SGGUID+280, @GGUID+519, -1),
+(@SGGUID+280, @GGUID+382, -1),
+(@SGGUID+280, @GGUID+617, -1),
+(@SGGUID+280, @GGUID+281, -1),
+-- Fel Iron Ore - Netherstorm - Manaforge Coruu
+(@SGGUID+281, @GGUID+153, -1),
+(@SGGUID+281, @GGUID+608, -1),
+(@SGGUID+281, @GGUID+424, -1),
+(@SGGUID+281, @GGUID+48, -1),
+(@SGGUID+281, @GGUID+298, -1),
+-- Fel Iron Ore - Netherstorm - Manaforge Duro
+(@SGGUID+282, @GGUID+397, -1),
+(@SGGUID+282, @GGUID+20, -1),
+(@SGGUID+282, @GGUID+419, -1),
+(@SGGUID+282, @GGUID+404, -1),
+(@SGGUID+282, @GGUID+259, -1),
+(@SGGUID+282, @GGUID+580, -1),
+(@SGGUID+282, @GGUID+50, -1),
+(@SGGUID+282, @GGUID+245, -1),
+(@SGGUID+282, @GGUID+476, -1),
+(@SGGUID+282, @GGUID+537, -1),
+-- Fel Iron Ore - Netherstorm - Manaforge Ultris
+(@SGGUID+283, @GGUID+374, -1),
+(@SGGUID+283, @GGUID+96, -1),
+(@SGGUID+283, @GGUID+111, -1),
+(@SGGUID+283, @GGUID+536, -1),
+(@SGGUID+283, @GGUID+78, -1),
+-- Fel Iron Ore - Netherstorm - Ruins of Farahlon
+(@SGGUID+284, @GGUID+148, -1),
+(@SGGUID+284, @GGUID+523, -1),
+(@SGGUID+284, @GGUID+353, -1),
+(@SGGUID+284, @GGUID+598, -1),
+(@SGGUID+284, @GGUID+388, -1),
+(@SGGUID+284, @GGUID+162, -1),
+-- Fel Iron Ore - Netherstorm - Forge Bases
+(@SGGUID+285, @GGUID+468, -1),
+(@SGGUID+285, @GGUID+116, -1),
+(@SGGUID+285, @GGUID+525, -1),
+(@SGGUID+285, @GGUID+378, -1),
+(@SGGUID+285, @GGUID+466, -1),
+(@SGGUID+285, @GGUID+607, -1),
+(@SGGUID+285, @GGUID+154, -1),
+(@SGGUID+285, @GGUID+104, -1),
+(@SGGUID+285, @GGUID+453, -1),
+-- Fel Iron Ore - Netherstorm - Farfield
+(@SGGUID+286, @GGUID+491, -1),
+(@SGGUID+286, @GGUID+135, -1),
+(@SGGUID+286, @GGUID+521, -1),
+(@SGGUID+286, @GGUID+480, -1);
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+287 AND @SGGUID+297;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
@@ -1038,6 +1317,95 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+295, 'Fel Iron Ore - Shadowmoon - Above Deathforge', 1, 1, 0, 0),
 (@SGGUID+296, 'Fel Iron Ore - Shadowmoon - Hand of Guldan', 1, 1, 0, 0),
 (@SGGUID+297, 'Fel Iron Ore - Shadowmoon - Ruins of Baa''ri', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+287 AND @SGGUID+297;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Fel Iron Ore - Shadowmoon - Legion Hold
+(@SGGUID+287, @GGUID+201, -1),
+(@SGGUID+287, @GGUID+522, -1),
+(@SGGUID+287, @GGUID+543, -1),
+(@SGGUID+287, @GGUID+52, -1),
+(@SGGUID+287, @GGUID+197, -1),
+(@SGGUID+287, @GGUID+31, -1),
+(@SGGUID+287, @GGUID+100, -1),
+-- Fel Iron Ore - Shadowmoon - Illidari Point
+(@SGGUID+288, @GGUID+109, -1),
+(@SGGUID+288, @GGUID+13, -1),
+(@SGGUID+288, @GGUID+527, -1),
+(@SGGUID+288, @GGUID+335, -1),
+(@SGGUID+288, @GGUID+72, -1),
+-- Fel Iron Ore - Shadowmoon - Eclipse Point
+(@SGGUID+289, @GGUID+150, -1),
+(@SGGUID+289, @GGUID+32, -1),
+(@SGGUID+289, @GGUID+262, -1),
+(@SGGUID+289, @GGUID+152, -1),
+(@SGGUID+289, @GGUID+270, -1),
+-- Fel Iron Ore - Shadowmoon - Gorefiend
+(@SGGUID+290, @GGUID+69, -1),
+(@SGGUID+290, @GGUID+114, -1),
+(@SGGUID+290, @GGUID+331, -1),
+(@SGGUID+290, @GGUID+268, -1),
+(@SGGUID+290, @GGUID+261, -1),
+(@SGGUID+290, @GGUID+3, -1),
+(@SGGUID+290, @GGUID+390, -1),
+(@SGGUID+290, @GGUID+481, -1),
+-- Fel Iron Ore - Shadowmoon - Black Temple
+(@SGGUID+291, @GGUID+182, -1),
+(@SGGUID+291, @GGUID+6, -1),
+(@SGGUID+291, @GGUID+531, -1),
+(@SGGUID+291, @GGUID+612, -1),
+(@SGGUID+291, @GGUID+241, -1),
+(@SGGUID+291, @GGUID+36, -1),
+(@SGGUID+291, @GGUID+443, -1),
+(@SGGUID+291, @GGUID+585, -1),
+(@SGGUID+291, @GGUID+62, -1),
+(@SGGUID+291, @GGUID+375, -1),
+-- Fel Iron Ore - Shadowmoon - Altar of Shatar
+(@SGGUID+292, @GGUID+441, -1),
+(@SGGUID+292, @GGUID+19, -1),
+(@SGGUID+292, @GGUID+141, -1),
+(@SGGUID+292, @GGUID+263, -1),
+(@SGGUID+292, @GGUID+351, -1),
+(@SGGUID+292, @GGUID+159, -1),
+(@SGGUID+292, @GGUID+610, -1),
+(@SGGUID+292, @GGUID+25, -1),
+-- Fel Iron Ore - Shadowmoon - Wardens Cage
+(@SGGUID+293, @GGUID+176, -1),
+(@SGGUID+293, @GGUID+63, -1),
+(@SGGUID+293, @GGUID+557, -1),
+(@SGGUID+293, @GGUID+482, -1),
+(@SGGUID+293, @GGUID+535, -1),
+(@SGGUID+293, @GGUID+554, -1),
+-- Fel Iron Ore - Shadowmoon - Deathforge (underground)
+(@SGGUID+294, @GGUID+93, -1),
+(@SGGUID+294, @GGUID+145, -1),
+(@SGGUID+294, @GGUID+400, -1),
+(@SGGUID+294, @GGUID+288, -1),
+(@SGGUID+294, @GGUID+520, -1),
+-- Fel Iron Ore - Shadowmoon - Above Deathforge
+(@SGGUID+295, @GGUID+242, -1),
+(@SGGUID+295, @GGUID+127, -1),
+(@SGGUID+295, @GGUID+451, -1),
+(@SGGUID+295, @GGUID+66, -1),
+(@SGGUID+295, @GGUID+594, -1),
+(@SGGUID+295, @GGUID+565, -1),
+-- Fel Iron Ore - Shadowmoon - Hand of Guldan
+(@SGGUID+296, @GGUID+2, -1),
+(@SGGUID+296, @GGUID+394, -1),
+(@SGGUID+296, @GGUID+312, -1),
+(@SGGUID+296, @GGUID+30, -1),
+(@SGGUID+296, @GGUID+167, -1),
+(@SGGUID+296, @GGUID+181, -1),
+(@SGGUID+296, @GGUID+118, -1),
+(@SGGUID+296, @GGUID+40, -1),
+(@SGGUID+296, @GGUID+228, -1),
+(@SGGUID+296, @GGUID+53, -1),
+-- Fel Iron Ore - Shadowmoon - Ruins of Baa''ri
+(@SGGUID+297, @GGUID+87, -1),
+(@SGGUID+297, @GGUID+65, -1),
+(@SGGUID+297, @GGUID+218, -1),
+(@SGGUID+297, @GGUID+232, -1),
+(@SGGUID+297, @GGUID+326, -1);
 
 -- adamantite and khorium
 SET @GGUID := 187000;
