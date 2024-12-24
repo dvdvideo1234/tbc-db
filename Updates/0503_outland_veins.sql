@@ -2026,6 +2026,78 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 DELETE FROM gameobject_spawn_entry WHERE guid BETWEEN @GGUID AND @GGUID+999;
 INSERT INTO gameobject_spawn_entry SELECT guid, 181556 FROM gameobject WHERE guid BETWEEN @GGUID AND @GGUID+999 AND id = 0;
 
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+298 AND @SGGUID+306;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+298, 'Adamantite - Zangarmarsh - Spawning Glen', 1, 1, 0, 0),
+(@SGGUID+299, 'Adamantite - Zangarmarsh - Angorosh Grounds', 1, 1, 0, 0),
+(@SGGUID+300, 'Adamantite - Zangarmarsh - Angorosh Stronghold', 1, 1, 0, 0),
+(@SGGUID+301, 'Adamantite - Zangarmarsh - Serpent Lake', 1, 1, 0, 0),
+(@SGGUID+302, 'Adamantite - Zangarmarsh - Feralfen Village', 1, 1, 0, 0),
+(@SGGUID+303, 'Adamantite - Zangarmarsh - Umbrafen Lake', 1, 1, 0, 0),
+(@SGGUID+304, 'Adamantite - Zangarmarsh - Funggor Cavern', 1, 1, 0, 0),
+(@SGGUID+305, 'Adamantite - Zangarmarsh - Dead Mire Inner', 1, 1, 0, 0),
+(@SGGUID+306, 'Adamantite - Zangarmarsh - Dead Mire Outer', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+298 AND @SGGUID+306;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Adamantite - Zangarmarsh - Spawning Glen
+(@SGGUID+298, @GGUID+608, -1),
+(@SGGUID+298, @GGUID+50, -1),
+(@SGGUID+298, @GGUID+37, -1),
+(@SGGUID+298, @GGUID+259, -1),
+(@SGGUID+298, @GGUID+0, -1),
+(@SGGUID+298, @GGUID+133, -1),
+-- Adamantite - Zangarmarsh - Angorosh Grounds
+(@SGGUID+299, @GGUID+97, -1),
+(@SGGUID+299, @GGUID+438, -1),
+(@SGGUID+299, @GGUID+29, -1),
+(@SGGUID+299, @GGUID+166, -1),
+(@SGGUID+299, @GGUID+135, -1),
+(@SGGUID+299, @GGUID+33, -1),
+-- Adamantite - Zangarmarsh - Angorosh Stronghold
+(@SGGUID+300, @GGUID+233, -1),
+(@SGGUID+300, @GGUID+224, -1),
+(@SGGUID+300, @GGUID+111, -1),
+(@SGGUID+300, @GGUID+117, -1),
+-- Adamantite - Zangarmarsh - Serpent Lake
+(@SGGUID+301, @GGUID+512, -1),
+(@SGGUID+301, @GGUID+94, -1),
+(@SGGUID+301, @GGUID+514, -1),
+(@SGGUID+301, @GGUID+527, -1),
+(@SGGUID+301, @GGUID+95, -1),
+(@SGGUID+301, @GGUID+446, -1),
+-- Adamantite - Zangarmarsh - Feralfen Village
+(@SGGUID+302, @GGUID+347, -1),
+(@SGGUID+302, @GGUID+600, -1),
+(@SGGUID+302, @GGUID+441, -1),
+(@SGGUID+302, @GGUID+127, -1),
+(@SGGUID+302, @GGUID+45, -1),
+(@SGGUID+302, @GGUID+567, -1),
+-- Adamantite - Zangarmarsh - Umbrafen Lake
+(@SGGUID+303, @GGUID+74, -1),
+(@SGGUID+303, @GGUID+269, -1),
+(@SGGUID+303, @GGUID+555, -1),
+(@SGGUID+303, @GGUID+519, -1),
+(@SGGUID+303, @GGUID+302, -1),
+(@SGGUID+303, @GGUID+575, -1),
+(@SGGUID+303, @GGUID+559, -1),
+-- Adamantite - Zangarmarsh - Funggor Cavern
+(@SGGUID+304, @GGUID+180, -1),
+(@SGGUID+304, @GGUID+292, -1),
+(@SGGUID+304, @GGUID+175, -1),
+(@SGGUID+304, @GGUID+225, -1),
+-- Adamantite - Zangarmarsh - Dead Mire Inner
+(@SGGUID+305, @GGUID+382, -1),
+(@SGGUID+305, @GGUID+5, -1),
+(@SGGUID+305, @GGUID+283, -1),
+(@SGGUID+305, @GGUID+191, -1),
+(@SGGUID+305, @GGUID+139, -1),
+-- Adamantite - Zangarmarsh - Dead Mire Outer
+(@SGGUID+306, @GGUID+296, -1),
+(@SGGUID+306, @GGUID+146, -1),
+(@SGGUID+306, @GGUID+141, -1),
+(@SGGUID+306, @GGUID+79, -1);
+
 -- nethercite
 SET @GGUID := 181800;
 DELETE FROM pool_gameobject_template WHERE id IN(185877);
