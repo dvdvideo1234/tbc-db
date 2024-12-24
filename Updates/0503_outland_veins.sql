@@ -650,7 +650,6 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+617,0,530,1, 2650.29248046875, 3822.087646484375, 140.0674285888671875, 0.523597896099090576, 0, 0, 0.258818626403808593, 0.965925931930541992,600,600);
 
 DELETE FROM gameobject_spawn_entry WHERE guid BETWEEN @GGUID AND @GGUID+999;
-INSERT INTO gameobject_spawn_entry SELECT guid, 181555 FROM gameobject WHERE guid BETWEEN @GGUID AND @GGUID+999 AND id = 0;
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+251 AND @SGGUID+255;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
@@ -1406,6 +1405,10 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+297, @GGUID+218, -1),
 (@SGGUID+297, @GGUID+232, -1),
 (@SGGUID+297, @GGUID+326, -1);
+
+DELETE FROM spawn_group_entry WHERE Id BETWEEN @SGGUID+251 AND @SGGUID+297;
+INSERT INTO spawn_group_entry(Id, Entry, MinCount, MaxCount, Chance) SELECT Id, 181555, 0, 0, 95 FROM spawn_group WHERE Id BETWEEN @SGGUID+251 AND @SGGUID+297;
+INSERT INTO spawn_group_entry(Id, Entry, MinCount, MaxCount, Chance) SELECT Id, 181557, 0, 0, 5 FROM spawn_group WHERE Id BETWEEN @SGGUID+251 AND @SGGUID+297;
 
 -- adamantite and khorium
 SET @GGUID := 187000;
