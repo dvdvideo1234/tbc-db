@@ -2098,6 +2098,117 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+306, @GGUID+141, -1),
 (@SGGUID+306, @GGUID+79, -1);
 
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+307 AND @SGGUID+321;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+307, 'Adamantite - Terokkar - Bleeding Hollow Ruins', 1, 1, 0, 0),
+(@SGGUID+308, 'Adamantite - Terokkar - Southern Ledge', 1, 1, 0, 0),
+(@SGGUID+309, 'Adamantite - Terokkar - Veil Shalas', 1, 1, 0, 0),
+(@SGGUID+310, 'Adamantite - Terokkar - Stonebreaker Hold', 1, 1, 0, 0),
+(@SGGUID+311, 'Adamantite - Terokkar - Cenarion Thicket', 1, 1, 0, 0),
+(@SGGUID+312, 'Adamantite - Terokkar - Tuurem', 1, 1, 0, 0),
+(@SGGUID+313, 'Adamantite - Terokkar - Raastok Glade', 1, 1, 0, 0),
+(@SGGUID+314, 'Adamantite - Terokkar - Firewing Point', 1, 1, 0, 0),
+(@SGGUID+315, 'Adamantite - Terokkar - Bonechewer Ruins', 1, 1, 0, 0),
+(@SGGUID+316, 'Adamantite - Terokkar - Skettis 1', 1, 1, 0, 0),
+(@SGGUID+317, 'Adamantite - Terokkar - Skettis 2', 1, 1, 0, 0),
+(@SGGUID+318, 'Adamantite - Terokkar - Skettis 3', 1, 1, 0, 0),
+(@SGGUID+319, 'Adamantite - Terokkar - Skettis 4', 1, 1, 0, 0),
+(@SGGUID+320, 'Adamantite - Terokkar - SW Corner', 1, 1, 0, 0),
+(@SGGUID+321, 'Adamantite - Terokkar - Barrier Hills', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+307 AND @SGGUID+321;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Adamantite - Terokkar - Bleeding Hollow Ruins
+(@SGGUID+307, @GGUID+550, -1),
+(@SGGUID+307, @GGUID+363, -1),
+(@SGGUID+307, @GGUID+387, -1),
+(@SGGUID+307, @GGUID+465, -1),
+(@SGGUID+307, @GGUID+317, -1),
+-- Adamantite - Terokkar - Southern Ledge
+(@SGGUID+308, @GGUID+381, -1),
+(@SGGUID+308, @GGUID+378, -1),
+(@SGGUID+308, @GGUID+92, -1),
+(@SGGUID+308, @GGUID+460, -1),
+-- Adamantite - Terokkar - Veil Shalas
+(@SGGUID+309, @GGUID+458, -1),
+(@SGGUID+309, @GGUID+138, -1),
+(@SGGUID+309, @GGUID+336, -1),
+(@SGGUID+309, @GGUID+552, -1),
+(@SGGUID+309, @GGUID+77, -1),
+-- Adamantite - Terokkar - Stonebreaker Hold
+(@SGGUID+310, @GGUID+31, -1),
+(@SGGUID+310, @GGUID+352, -1),
+(@SGGUID+310, @GGUID+148, -1),
+(@SGGUID+310, @GGUID+341, -1),
+-- Adamantite - Terokkar - Cenarion Thicket
+(@SGGUID+311, @GGUID+2, -1),
+(@SGGUID+311, @GGUID+393, -1),
+(@SGGUID+311, @GGUID+280, -1),
+(@SGGUID+311, @GGUID+248, -1),
+(@SGGUID+311, @GGUID+468, -1),
+(@SGGUID+311, @GGUID+188, -1),
+(@SGGUID+311, @GGUID+162, -1),
+(@SGGUID+311, @GGUID+160, -1),
+-- Adamantite - Terokkar - Tuurem
+(@SGGUID+312, @GGUID+473, -1),
+(@SGGUID+312, @GGUID+418, -1),
+(@SGGUID+312, @GGUID+402, -1),
+(@SGGUID+312, @GGUID+422, -1),
+(@SGGUID+312, @GGUID+297, -1),
+-- Adamantite - Terokkar - Raastok Glade
+(@SGGUID+313, @GGUID+123, -1),
+(@SGGUID+313, @GGUID+305, -1),
+(@SGGUID+313, @GGUID+118, -1),
+(@SGGUID+313, @GGUID+475, -1),
+-- Adamantite - Terokkar - Firewing Point
+(@SGGUID+314, @GGUID+121, -1),
+(@SGGUID+314, @GGUID+469, -1),
+(@SGGUID+314, @GGUID+223, -1),
+(@SGGUID+314, @GGUID+315, -1),
+(@SGGUID+314, @GGUID+85, -1),
+(@SGGUID+314, @GGUID+471, -1),
+(@SGGUID+314, @GGUID+38, -1),
+-- Adamantite - Terokkar - Bonechewer Ruins
+(@SGGUID+315, @GGUID+539, -1),
+(@SGGUID+315, @GGUID+474, -1),
+(@SGGUID+315, @GGUID+249, -1),
+(@SGGUID+315, @GGUID+246, -1),
+(@SGGUID+315, @GGUID+236, -1),
+-- Adamantite - Terokkar - Skettis 1
+(@SGGUID+316, @GGUID+483, -1),
+(@SGGUID+316, @GGUID+300, -1),
+(@SGGUID+316, @GGUID+316, -1),
+(@SGGUID+316, @GGUID+66, -1),
+-- Adamantite - Terokkar - Skettis 2
+(@SGGUID+317, @GGUID+343, -1),
+(@SGGUID+317, @GGUID+319, -1),
+(@SGGUID+317, @GGUID+481, -1),
+(@SGGUID+317, @GGUID+120, -1),
+-- Adamantite - Terokkar - Skettis 3
+(@SGGUID+318, @GGUID+298, -1),
+(@SGGUID+318, @GGUID+565, -1),
+(@SGGUID+318, @GGUID+582, -1),
+(@SGGUID+318, @GGUID+49, -1),
+-- Adamantite - Terokkar - Skettis 4
+(@SGGUID+319, @GGUID+83, -1),
+(@SGGUID+319, @GGUID+86, -1),
+(@SGGUID+319, @GGUID+434, -1),
+(@SGGUID+319, @GGUID+566, -1),
+-- Adamantite - Terokkar - SW Corner
+(@SGGUID+320, @GGUID+435, -1),
+(@SGGUID+320, @GGUID+344, -1),
+(@SGGUID+320, @GGUID+520, -1),
+(@SGGUID+320, @GGUID+462, -1),
+-- Adamantite - Terokkar - Barrier Hills
+(@SGGUID+321, @GGUID+277, -1),
+(@SGGUID+321, @GGUID+227, -1),
+(@SGGUID+321, @GGUID+163, -1),
+(@SGGUID+321, @GGUID+273, -1),
+(@SGGUID+321, @GGUID+288, -1),
+(@SGGUID+321, @GGUID+407, -1),
+(@SGGUID+321, @GGUID+183, -1),
+(@SGGUID+321, @GGUID+184, -1);
+
 -- nethercite
 SET @GGUID := 181800;
 DELETE FROM pool_gameobject_template WHERE id IN(185877);
