@@ -2705,6 +2705,126 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+365, @GGUID+140, -1),
 (@SGGUID+365, @GGUID+18, -1);
 
+DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+366 AND @SGGUID+377;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+366, 'Adamantite - SMV - Legion Hold', 1, 1, 0, 0),
+(@SGGUID+367, 'Adamantite - SMV - Illidari Point', 1, 1, 0, 0),
+(@SGGUID+368, 'Adamantite - SMV - Shadowmoon Village', 1, 1, 0, 0),
+(@SGGUID+369, 'Adamantite - SMV - Coilskar Point', 1, 1, 0, 0),
+(@SGGUID+370, 'Adamantite - SMV - Eclipse Point', 1, 1, 0, 0),
+(@SGGUID+371, 'Adamantite - SMV - Wardens Cage', 1, 1, 0, 0),
+(@SGGUID+372, 'Adamantite - SMV - Altar of Shatar', 1, 1, 0, 0),
+(@SGGUID+373, 'Adamantite - SMV - Deathforge (underground)', 1, 1, 0, 0),
+(@SGGUID+374, 'Adamantite - SMV - Above Deathforge', 1, 1, 0, 0),
+(@SGGUID+375, 'Adamantite - SMV - Coilskar Cistern', 1, 1, 0, 0),
+(@SGGUID+376, 'Adamantite - SMV - Netherwing Ledge East', 1, 1, 0, 0),
+(@SGGUID+377, 'Adamantite - SMV - Netherwing Ledge West', 1, 1, 0, 0);
+
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+366 AND @SGGUID+377;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- Adamantite - SMV - Legion Hold
+(@SGGUID+366, @GGUID+27, -1),
+(@SGGUID+366, @GGUID+167, -1),
+(@SGGUID+366, @GGUID+534, -1),
+(@SGGUID+366, @GGUID+23, -1),
+(@SGGUID+366, @GGUID+275, -1),
+(@SGGUID+366, @GGUID+41, -1),
+-- Adamantite - SMV - Illidari Point
+(@SGGUID+367, @GGUID+419, -1),
+(@SGGUID+367, @GGUID+76, -1),
+(@SGGUID+367, @GGUID+295, -1),
+(@SGGUID+367, @GGUID+327, -1),
+(@SGGUID+367, @GGUID+455, -1),
+-- Adamantite - SMV - Shadowmoon Village
+(@SGGUID+368, @GGUID+276, -1),
+(@SGGUID+368, @GGUID+20, -1),
+(@SGGUID+368, @GGUID+544, -1),
+(@SGGUID+368, @GGUID+6, -1),
+(@SGGUID+368, @GGUID+506, -1),
+(@SGGUID+368, @GGUID+150, -1),
+-- Adamantite - SMV - Coilskar Point
+(@SGGUID+369, @GGUID+334, -1),
+(@SGGUID+369, @GGUID+126, -1),
+(@SGGUID+369, @GGUID+399, -1),
+(@SGGUID+369, @GGUID+134, -1),
+-- Adamantite - SMV - Eclipse Point
+(@SGGUID+370, @GGUID+16, -1),
+(@SGGUID+370, @GGUID+78, -1),
+(@SGGUID+370, @GGUID+247, -1),
+(@SGGUID+370, @GGUID+25, -1),
+(@SGGUID+370, @GGUID+232, -1),
+(@SGGUID+370, @GGUID+545, -1),
+(@SGGUID+370, @GGUID+124, -1),
+(@SGGUID+370, @GGUID+104, -1),
+(@SGGUID+370, @GGUID+547, -1),
+(@SGGUID+370, @GGUID+101, -1),
+-- Adamantite - SMV - Wardens Cage
+(@SGGUID+371, @GGUID+313, -1),
+(@SGGUID+371, @GGUID+17, -1),
+(@SGGUID+371, @GGUID+303, -1),
+(@SGGUID+371, @GGUID+548, -1),
+(@SGGUID+371, @GGUID+13, -1),
+(@SGGUID+371, @GGUID+322, -1),
+(@SGGUID+371, @GGUID+214, -1),
+(@SGGUID+371, @GGUID+597, -1),
+(@SGGUID+371, @GGUID+171, -1),
+-- Adamantite - SMV - Altar of Shatar
+(@SGGUID+372, @GGUID+504, -1),
+(@SGGUID+372, @GGUID+560, -1),
+(@SGGUID+372, @GGUID+493, -1),
+(@SGGUID+372, @GGUID+391, -1),
+(@SGGUID+372, @GGUID+103, -1),
+(@SGGUID+372, @GGUID+122, -1),
+(@SGGUID+372, @GGUID+440, -1),
+(@SGGUID+372, @GGUID+526, -1),
+-- Adamantite - SMV - Deathforge (underground)
+(@SGGUID+373, @GGUID+282, -1),
+(@SGGUID+373, @GGUID+55, -1),
+(@SGGUID+373, @GGUID+96, -1),
+(@SGGUID+373, @GGUID+82, -1),
+(@SGGUID+373, @GGUID+58, -1),
+(@SGGUID+373, @GGUID+91, -1),
+(@SGGUID+373, @GGUID+284, -1),
+(@SGGUID+373, @GGUID+153, -1),
+-- Adamantite - SMV - Above Deathforge
+(@SGGUID+374, @GGUID+109, -1),
+(@SGGUID+374, @GGUID+301, -1),
+(@SGGUID+374, @GGUID+571, -1),
+(@SGGUID+374, @GGUID+151, -1),
+(@SGGUID+374, @GGUID+591, -1),
+(@SGGUID+374, @GGUID+43, -1),
+-- Adamantite - SMV - Coilskar Cistern
+(@SGGUID+375, @GGUID+3, -1),
+(@SGGUID+375, @GGUID+108, -1),
+(@SGGUID+375, @GGUID+4, -1),
+(@SGGUID+375, @GGUID+161, -1),
+(@SGGUID+375, @GGUID+113, -1),
+(@SGGUID+375, @GGUID+84, -1),
+(@SGGUID+375, @GGUID+8, -1),
+(@SGGUID+375, @GGUID+116, -1),
+(@SGGUID+375, @GGUID+255, -1),
+(@SGGUID+375, @GGUID+241, -1),
+(@SGGUID+375, @GGUID+345, -1),
+(@SGGUID+375, @GGUID+119, -1),
+-- Adamantite - SMV - Netherwing Ledge East
+(@SGGUID+376, @GGUID+164, -1),
+(@SGGUID+376, @GGUID+501, -1),
+(@SGGUID+376, @GGUID+159, -1),
+(@SGGUID+376, @GGUID+14, -1),
+(@SGGUID+376, @GGUID+12, -1),
+(@SGGUID+376, @GGUID+155, -1),
+(@SGGUID+376, @GGUID+522, -1),
+(@SGGUID+376, @GGUID+377, -1),
+-- Adamantite - SMV - Netherwing Ledge West
+(@SGGUID+377, @GGUID+19, -1),
+(@SGGUID+377, @GGUID+355, -1),
+(@SGGUID+377, @GGUID+521, -1),
+(@SGGUID+377, @GGUID+36, -1),
+(@SGGUID+377, @GGUID+174, -1),
+(@SGGUID+377, @GGUID+499, -1),
+(@SGGUID+377, @GGUID+349, -1),
+(@SGGUID+377, @GGUID+408, -1);
+
 
 -- nethercite
 SET @GGUID := 181800;
