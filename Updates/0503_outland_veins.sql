@@ -928,7 +928,6 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+257, @GGUID+402, -1),
 (@SGGUID+257, @GGUID+395, -1),
 -- Fel Iron Deposit - Zangarmarsh - Feralfen Village
-(@SGGUID+258, @GGUID+307, -1),
 (@SGGUID+258, @GGUID+289, -1),
 (@SGGUID+258, @GGUID+282, -1),
 (@SGGUID+258, @GGUID+386, -1),
@@ -2552,7 +2551,6 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+353, @GGUID+364, -1),
 (@SGGUID+353, @GGUID+509, -1),
 -- Adamantite - BEM - Gruuls Lair
-(@SGGUID+354, @GGUID+149, -1),
 (@SGGUID+354, @GGUID+308, -1),
 (@SGGUID+354, @GGUID+73, -1),
 (@SGGUID+354, @GGUID+500, -1),
@@ -2828,6 +2826,12 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+377, @GGUID+349, -1),
 (@SGGUID+377, @GGUID+408, -1);
 
+DELETE FROM spawn_group_entry WHERE Id BETWEEN @SGGUID+298 AND @SGGUID+377;
+INSERT INTO spawn_group_entry(Id, Entry, MinCount, MaxCount, Chance) SELECT Id, 181556, 0, 0, 60 FROM spawn_group WHERE Id BETWEEN @SGGUID+298 AND @SGGUID+377;
+INSERT INTO spawn_group_entry(Id, Entry, MinCount, MaxCount, Chance) SELECT Id, 181569, 0, 0, 35 FROM spawn_group WHERE (Id BETWEEN @SGGUID+298 AND @SGGUID+321) OR (Id BETWEEN @SGGUID+340 AND @SGGUID+377); -- generic rich
+INSERT INTO spawn_group_entry(Id, Entry, MinCount, MaxCount, Chance) SELECT Id, 181570, 0, 0, 35 FROM spawn_group WHERE Id BETWEEN @SGGUID+322 AND @SGGUID+339; -- nagrand rich
+INSERT INTO spawn_group_entry(Id, Entry, MinCount, MaxCount, Chance) SELECT Id, 181557, 0, 0, 5 FROM spawn_group WHERE Id BETWEEN @SGGUID+298 AND @SGGUID+377;
+
 -- nethercite
 SET @GGUID := 181800;
 DELETE FROM pool_gameobject_template WHERE id IN(185877);
@@ -2935,6 +2939,7 @@ INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, positio
 (@GGUID+6,185915,530,1, -5140.94091796875, 913.82781982421875, 35.86554718017578125, -1.01228940486907958, 0, 0, -0.48480892181396484, 0.87462007999420166,600,600),
 (@GGUID+7,185915,530,1, -5061.80712890625, 640.96392822265625, 29.33133697509765625, -0.24434557557106018, 0, 0, -0.12186908721923828, 0.9925462007522583,600,600);
 
+DELETE FROM spawn_group_spawn WHERE guid IN(5309376,5309403);
 DELETE FROM spawn_group_spawn WHERE Id IN(5300004,5300005) AND guid BETWEEN @GGUID+0 AND @GGUID+7;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- Netherwing Egg - Ledge
