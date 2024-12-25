@@ -20,7 +20,10 @@ https://www.wowhead.com/tbc/object=185877/nethercite-deposit
 select count(*) from gameobject where id  = 181555 AND map=530 AND position_x NOT BETWEEN 11400 AND 13100; -- fel-iron-deposit
 select count(*) from gameobject where id  = 181556 AND map=530 AND position_x NOT BETWEEN 11400 AND 13100; -- adamantite-deposit
 select count(*) from gameobject where id  = 185877 AND map=530 AND position_x NOT BETWEEN 11400 AND 13100; -- nethercite-deposit
+select a.id,a.Name, a.MaxCount, count(b.guid) from spawn_group a join spawn_group_spawn b on a.id=b.id where a.name like '%Adamantite
+%' group by a.id;
 */
+
 
 DELETE FROM gameobject WHERE Id IN(181555, 181556, 181569, 181570, 181557) AND map=530 AND position_x NOT BETWEEN 11400 AND 13100;
 
@@ -653,15 +656,15 @@ DELETE FROM gameobject_spawn_entry WHERE guid BETWEEN @GGUID AND @GGUID+999;
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+251 AND @SGGUID+255;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+251, 'Fel Iron Ore - HFP - NW', 1, 1, 0, 0),
-(@SGGUID+252, 'Fel Iron Ore - HFP - NE', 1, 1, 0, 0),
-(@SGGUID+253, 'Fel Iron Ore - HFP - Middle', 1, 1, 0, 0),
-(@SGGUID+254, 'Fel Iron Ore - HFP - SW', 1, 1, 0, 0),
-(@SGGUID+255, 'Fel Iron Ore - HFP - SE', 1, 1, 0, 0);
+(@SGGUID+251, 'Fel Iron Deposit - HFP - NW', 1, 9, 0, 0),
+(@SGGUID+252, 'Fel Iron Deposit - HFP - NE', 1, 8, 0, 0),
+(@SGGUID+253, 'Fel Iron Deposit - HFP - Middle', 1, 8, 0, 0),
+(@SGGUID+254, 'Fel Iron Deposit - HFP - SW', 1, 13, 0, 0),
+(@SGGUID+255, 'Fel Iron Deposit - HFP - SE', 1, 18, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+251 AND @SGGUID+255;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
--- Fel Iron Ore - HFP - NW
+-- Fel Iron Deposit - HFP - NW
 (@SGGUID+251, @GGUID+184, -1),
 (@SGGUID+251, @GGUID+315, -1),
 (@SGGUID+251, @GGUID+500, -1),
@@ -695,7 +698,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+251, @GGUID+294, -1),
 (@SGGUID+251, @GGUID+339, -1),
 (@SGGUID+251, @GGUID+616, -1),
--- Fel Iron Ore - HFP - NE
+-- Fel Iron Deposit - HFP - NE
 (@SGGUID+252, @GGUID+364, -1),
 (@SGGUID+252, @GGUID+613, -1),
 (@SGGUID+252, @GGUID+534, -1),
@@ -727,7 +730,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+252, @GGUID+188, -1),
 (@SGGUID+252, @GGUID+369, -1),
 (@SGGUID+252, @GGUID+501, -1),
--- Fel Iron Ore - HFP - Middle
+-- Fel Iron Deposit - HFP - Middle
 (@SGGUID+253, @GGUID+234, -1),
 (@SGGUID+253, @GGUID+328, -1),
 (@SGGUID+253, @GGUID+155, -1),
@@ -756,7 +759,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+253, @GGUID+430, -1),
 (@SGGUID+253, @GGUID+91, -1),
 (@SGGUID+253, @GGUID+156, -1),
--- Fel Iron Ore - HFP - SW
+-- Fel Iron Deposit - HFP - SW
 (@SGGUID+254, @GGUID+90, -1),
 (@SGGUID+254, @GGUID+499, -1),
 (@SGGUID+254, @GGUID+85, -1),
@@ -807,7 +810,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+254, @GGUID+497, -1),
 (@SGGUID+254, @GGUID+205, -1),
 (@SGGUID+254, @GGUID+243, -1),
--- Fel Iron Ore - HFP - SE
+-- Fel Iron Deposit - HFP - SE
 (@SGGUID+255, @GGUID+367, -1),
 (@SGGUID+255, @GGUID+86, -1),
 (@SGGUID+255, @GGUID+254, -1),
@@ -883,16 +886,16 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+256 AND @SGGUID+261;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+256, 'Fel Iron Ore - Zangarmarsh - Angorosh Fortress', 1, 1, 0, 0),
-(@SGGUID+257, 'Fel Iron Ore - Zangarmarsh - Western Edge', 1, 1, 0, 0),
-(@SGGUID+258, 'Fel Iron Ore - Zangarmarsh - Feralfen Village', 1, 1, 0, 0),
-(@SGGUID+259, 'Fel Iron Ore - Zangarmarsh - Serpent Lake', 1, 1, 0, 0),
-(@SGGUID+260, 'Fel Iron Ore - Zangarmarsh - East', 1, 1, 0, 0),
-(@SGGUID+261, 'Fel Iron Ore - Zangarmarsh - Funggor Cavern', 1, 1, 0, 0);
+(@SGGUID+256, 'Fel Iron Deposit - Zangarmarsh - Angorosh Fortress', 1, 3, 0, 0),
+(@SGGUID+257, 'Fel Iron Deposit - Zangarmarsh - Western Edge', 1, 6, 0, 0),
+(@SGGUID+258, 'Fel Iron Deposit - Zangarmarsh - Feralfen Village', 1, 5, 0, 0),
+(@SGGUID+259, 'Fel Iron Deposit - Zangarmarsh - Serpent Lake', 1, 4, 0, 0),
+(@SGGUID+260, 'Fel Iron Deposit - Zangarmarsh - East', 1, 5, 0, 0),
+(@SGGUID+261, 'Fel Iron Deposit - Zangarmarsh - Funggor Cavern', 1, 3, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+256 AND @SGGUID+261;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
--- Fel Iron Ore - Zangarmarsh - Angorosh Fortress
+-- Fel Iron Deposit - Zangarmarsh - Angorosh Fortress
 (@SGGUID+256, @GGUID+303, -1),
 (@SGGUID+256, @GGUID+133, -1),
 (@SGGUID+256, @GGUID+250, -1),
@@ -902,7 +905,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+256, @GGUID+129, -1),
 (@SGGUID+256, @GGUID+422, -1),
 (@SGGUID+256, @GGUID+307, -1),
--- Fel Iron Ore - Zangarmarsh - Western Edge
+-- Fel Iron Deposit - Zangarmarsh - Western Edge
 (@SGGUID+257, @GGUID+231, -1),
 (@SGGUID+257, @GGUID+559, -1),
 (@SGGUID+257, @GGUID+35, -1),
@@ -924,7 +927,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+257, @GGUID+487, -1),
 (@SGGUID+257, @GGUID+402, -1),
 (@SGGUID+257, @GGUID+395, -1),
--- Fel Iron Ore - Zangarmarsh - Feralfen Village
+-- Fel Iron Deposit - Zangarmarsh - Feralfen Village
 (@SGGUID+258, @GGUID+307, -1),
 (@SGGUID+258, @GGUID+289, -1),
 (@SGGUID+258, @GGUID+282, -1),
@@ -944,7 +947,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+258, @GGUID+318, -1),
 (@SGGUID+258, @GGUID+140, -1),
 (@SGGUID+258, @GGUID+169, -1),
--- Fel Iron Ore - Zangarmarsh - Serpent Lake
+-- Fel Iron Deposit - Zangarmarsh - Serpent Lake
 (@SGGUID+259, @GGUID+37, -1),
 (@SGGUID+259, @GGUID+68, -1),
 (@SGGUID+259, @GGUID+211, -1),
@@ -957,7 +960,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+259, @GGUID+563, -1),
 (@SGGUID+259, @GGUID+73, -1),
 (@SGGUID+259, @GGUID+83, -1),
--- Fel Iron Ore - Zangarmarsh - East
+-- Fel Iron Deposit - Zangarmarsh - East
 (@SGGUID+260, @GGUID+575, -1),
 (@SGGUID+260, @GGUID+560, -1),
 (@SGGUID+260, @GGUID+166, -1),
@@ -977,7 +980,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+260, @GGUID+587, -1),
 (@SGGUID+260, @GGUID+299, -1),
 (@SGGUID+260, @GGUID+102, -1),
--- Fel Iron Ore - Zangarmarsh - Funggor Cavern
+-- Fel Iron Deposit - Zangarmarsh - Funggor Cavern
 (@SGGUID+261, @GGUID+440, -1),
 (@SGGUID+261, @GGUID+185, -1),
 (@SGGUID+261, @GGUID+252, -1),
@@ -989,23 +992,23 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+262 AND @SGGUID+267;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+262, 'Fel Iron Ore - Terokkar - Bleeding Hollow Ruins', 1, 1, 0, 0),
-(@SGGUID+263, 'Fel Iron Ore - Terokkar - Auchindoun', 1, 1, 0, 0),
-(@SGGUID+264, 'Fel Iron Ore - Terokkar - Around Stonebreaker', 1, 1, 0, 0),
-(@SGGUID+265, 'Fel Iron Ore - Terokkar - Cenarion Thicket', 1, 1, 0, 0),
-(@SGGUID+266, 'Fel Iron Ore - Terokkar - Veil Shalas', 1, 1, 0, 0),
-(@SGGUID+267, 'Fel Iron Ore - Terokkar - Raastok Glade', 1, 1, 0, 0);
+(@SGGUID+262, 'Fel Iron Deposit - Terokkar - Bleeding Hollow Ruins', 1, 2, 0, 0),
+(@SGGUID+263, 'Fel Iron Deposit - Terokkar - Auchindoun', 1, 3, 0, 0),
+(@SGGUID+264, 'Fel Iron Deposit - Terokkar - Around Stonebreaker', 1, 3, 0, 0),
+(@SGGUID+265, 'Fel Iron Deposit - Terokkar - Cenarion Thicket', 1, 3, 0, 0),
+(@SGGUID+266, 'Fel Iron Deposit - Terokkar - Veil Shalas', 1, 2, 0, 0),
+(@SGGUID+267, 'Fel Iron Deposit - Terokkar - Raastok Glade', 1, 4, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+262 AND @SGGUID+267;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
--- Fel Iron Ore - Terokkar - Bleeding Hollow Ruins
+-- Fel Iron Deposit - Terokkar - Bleeding Hollow Ruins
 (@SGGUID+262, @GGUID+509, -1),
 (@SGGUID+262, @GGUID+426, -1),
 (@SGGUID+262, @GGUID+316, -1),
 (@SGGUID+262, @GGUID+370, -1),
 (@SGGUID+262, @GGUID+158, -1),
 (@SGGUID+262, @GGUID+287, -1),
--- Fel Iron Ore - Terokkar - Auchindoun
+-- Fel Iron Deposit - Terokkar - Auchindoun
 (@SGGUID+263, @GGUID+417, -1),
 (@SGGUID+263, @GGUID+101, -1),
 (@SGGUID+263, @GGUID+293, -1),
@@ -1017,7 +1020,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+263, @GGUID+423, -1),
 (@SGGUID+263, @GGUID+348, -1),
 (@SGGUID+263, @GGUID+333, -1),
--- Fel Iron Ore - Terokkar - Around Stonebreaker
+-- Fel Iron Deposit - Terokkar - Around Stonebreaker
 (@SGGUID+264, @GGUID+301, -1),
 (@SGGUID+264, @GGUID+99, -1),
 (@SGGUID+264, @GGUID+373, -1),
@@ -1028,7 +1031,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+264, @GGUID+359, -1),
 (@SGGUID+264, @GGUID+366, -1),
 (@SGGUID+264, @GGUID+217, -1),
--- Fel Iron Ore - Terokkar - Cenarion Thicket
+-- Fel Iron Deposit - Terokkar - Cenarion Thicket
 (@SGGUID+265, @GGUID+568, -1),
 (@SGGUID+265, @GGUID+567, -1),
 (@SGGUID+265, @GGUID+572, -1),
@@ -1040,14 +1043,14 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+265, @GGUID+456, -1),
 (@SGGUID+265, @GGUID+429, -1),
 (@SGGUID+265, @GGUID+192, -1),
--- Fel Iron Ore - Terokkar - Veil Shalas
+-- Fel Iron Deposit - Terokkar - Veil Shalas
 (@SGGUID+266, @GGUID+405, -1),
 (@SGGUID+266, @GGUID+403, -1),
 (@SGGUID+266, @GGUID+190, -1),
 (@SGGUID+266, @GGUID+75, -1),
 (@SGGUID+266, @GGUID+396, -1),
 (@SGGUID+266, @GGUID+401, -1),
--- Fel Iron Ore - Terokkar - Raastok Glade
+-- Fel Iron Deposit - Terokkar - Raastok Glade
 (@SGGUID+267, @GGUID+561, -1),
 (@SGGUID+267, @GGUID+198, -1),
 (@SGGUID+267, @GGUID+462, -1),
@@ -1067,14 +1070,14 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+268 AND @SGGUID+271;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+268, 'Fel Iron Ore - Nagrand - Oshugun', 1, 1, 0, 0),
-(@SGGUID+269, 'Fel Iron Ore - Nagrand - Warmaul Hill', 1, 1, 0, 0),
-(@SGGUID+270, 'Fel Iron Ore - Nagrand - Ring of Trials', 1, 1, 0, 0),
-(@SGGUID+271, 'Fel Iron Ore - Nagrand - Kilsorrow Fortress', 1, 1, 0, 0);
+(@SGGUID+268, 'Fel Iron Deposit - Nagrand - Oshugun', 1, 5, 0, 0),
+(@SGGUID+269, 'Fel Iron Deposit - Nagrand - Warmaul Hill', 1, 7, 0, 0),
+(@SGGUID+270, 'Fel Iron Deposit - Nagrand - Ring of Trials', 1, 3, 0, 0),
+(@SGGUID+271, 'Fel Iron Deposit - Nagrand - Kilsorrow Fortress', 1, 5, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+268 AND @SGGUID+271;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
--- Fel Iron Ore - Nagrand - Oshugun
+-- Fel Iron Deposit - Nagrand - Oshugun
 (@SGGUID+268, @GGUID+225, -1),
 (@SGGUID+268, @GGUID+117, -1),
 (@SGGUID+268, @GGUID+199, -1),
@@ -1090,7 +1093,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+268, @GGUID+313, -1),
 (@SGGUID+268, @GGUID+614, -1),
 (@SGGUID+268, @GGUID+147, -1),
--- Fel Iron Ore - Nagrand - Warmaul Hill
+-- Fel Iron Deposit - Nagrand - Warmaul Hill
 (@SGGUID+269, @GGUID+171, -1),
 (@SGGUID+269, @GGUID+513, -1),
 (@SGGUID+269, @GGUID+17, -1),
@@ -1114,7 +1117,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+269, @GGUID+226, -1),
 (@SGGUID+269, @GGUID+595, -1),
 (@SGGUID+269, @GGUID+529, -1),
--- Fel Iron Ore - Nagrand - Ring of Trials
+-- Fel Iron Deposit - Nagrand - Ring of Trials
 (@SGGUID+270, @GGUID+219, -1),
 (@SGGUID+270, @GGUID+193, -1),
 (@SGGUID+270, @GGUID+357, -1),
@@ -1126,7 +1129,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+270, @GGUID+562, -1),
 (@SGGUID+270, @GGUID+222, -1),
 (@SGGUID+270, @GGUID+284, -1),
--- Fel Iron Ore - Nagrand - Kilsorrow Fortress
+-- Fel Iron Deposit - Nagrand - Kilsorrow Fortress
 (@SGGUID+271, @GGUID+253, -1),
 (@SGGUID+271, @GGUID+379, -1),
 (@SGGUID+271, @GGUID+7, -1),
@@ -1143,30 +1146,30 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+272 AND @SGGUID+279;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+272, 'Fel Iron Ore - BEM - Sylvanaar', 1, 1, 0, 0),
-(@SGGUID+273, 'Fel Iron Ore - BEM - Thunderlord Stronghold', 1, 1, 0, 0),
-(@SGGUID+274, 'Fel Iron Ore - BEM - Toshley Plateau', 1, 1, 0, 0),
-(@SGGUID+275, 'Fel Iron Ore - BEM - Vekhaar Stand', 1, 1, 0, 0),
-(@SGGUID+276, 'Fel Iron Ore - BEM - Bloodmaul Outpost', 1, 1, 0, 0),
-(@SGGUID+277, 'Fel Iron Ore - BEM - Gruuls Lair', 1, 1, 0, 0),
-(@SGGUID+278, 'Fel Iron Ore - BEM - Ruuan Weald', 1, 1, 0, 0),
-(@SGGUID+279, 'Fel Iron Ore - BEM - Ravens Wood', 1, 1, 0, 0);
+(@SGGUID+272, 'Fel Iron Deposit - BEM - Sylvanaar', 1, 2, 0, 0),
+(@SGGUID+273, 'Fel Iron Deposit - BEM - Thunderlord Stronghold', 1, 1, 0, 0),
+(@SGGUID+274, 'Fel Iron Deposit - BEM - Toshley Plateau', 1, 5, 0, 0),
+(@SGGUID+275, 'Fel Iron Deposit - BEM - Vekhaar Stand', 1, 2, 0, 0),
+(@SGGUID+276, 'Fel Iron Deposit - BEM - Bloodmaul Outpost', 1, 3, 0, 0),
+(@SGGUID+277, 'Fel Iron Deposit - BEM - Gruuls Lair', 1, 5, 0, 0),
+(@SGGUID+278, 'Fel Iron Deposit - BEM - Ruuan Weald', 1, 2, 0, 0),
+(@SGGUID+279, 'Fel Iron Deposit - BEM - Ravens Wood', 1, 2, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+272 AND @SGGUID+279;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
--- Fel Iron Ore - BEM - Sylvanaar
+-- Fel Iron Deposit - BEM - Sylvanaar
 (@SGGUID+272, @GGUID+233, -1),
 (@SGGUID+272, @GGUID+14, -1),
 (@SGGUID+272, @GGUID+266, -1),
 (@SGGUID+272, @GGUID+314, -1),
 (@SGGUID+272, @GGUID+432, -1),
 (@SGGUID+272, @GGUID+308, -1),
--- Fel Iron Ore - BEM - Thunderlord Stronghold
+-- Fel Iron Deposit - BEM - Thunderlord Stronghold
 (@SGGUID+273, @GGUID+239, -1),
 (@SGGUID+273, @GGUID+459, -1),
 (@SGGUID+273, @GGUID+601, -1),
 (@SGGUID+273, @GGUID+458, -1),
--- Fel Iron Ore - BEM - Toshley Plateau
+-- Fel Iron Deposit - BEM - Toshley Plateau
 (@SGGUID+274, @GGUID+144, -1),
 (@SGGUID+274, @GGUID+196, -1),
 (@SGGUID+274, @GGUID+470, -1),
@@ -1185,7 +1188,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+274, @GGUID+602, -1),
 (@SGGUID+274, @GGUID+170, -1),
 (@SGGUID+274, @GGUID+84, -1),
--- Fel Iron Ore - BEM - Vekhaar Stand
+-- Fel Iron Deposit - BEM - Vekhaar Stand
 (@SGGUID+275, @GGUID+544, -1),
 (@SGGUID+275, @GGUID+457, -1),
 (@SGGUID+275, @GGUID+352, -1),
@@ -1194,7 +1197,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+275, @GGUID+474, -1),
 (@SGGUID+275, @GGUID+98, -1),
 (@SGGUID+275, @GGUID+448, -1),
--- Fel Iron Ore - BEM - Bloodmaul Outpost
+-- Fel Iron Deposit - BEM - Bloodmaul Outpost
 (@SGGUID+276, @GGUID+28, -1),
 (@SGGUID+276, @GGUID+446, -1),
 (@SGGUID+276, @GGUID+605, -1),
@@ -1204,7 +1207,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+276, @GGUID+49, -1),
 (@SGGUID+276, @GGUID+297, -1),
 (@SGGUID+276, @GGUID+265, -1),
--- Fel Iron Ore - BEM - Gruuls Lair
+-- Fel Iron Deposit - BEM - Gruuls Lair
 (@SGGUID+277, @GGUID+237, -1),
 (@SGGUID+277, @GGUID+200, -1),
 (@SGGUID+277, @GGUID+579, -1),
@@ -1218,7 +1221,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+277, @GGUID+449, -1),
 (@SGGUID+277, @GGUID+304, -1),
 (@SGGUID+277, @GGUID+547, -1),
--- Fel Iron Ore - BEM - Ruuan Weald
+-- Fel Iron Deposit - BEM - Ruuan Weald
 (@SGGUID+278, @GGUID+97, -1),
 (@SGGUID+278, @GGUID+450, -1),
 (@SGGUID+278, @GGUID+566, -1),
@@ -1227,7 +1230,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+278, @GGUID+120, -1),
 (@SGGUID+278, @GGUID+455, -1),
 (@SGGUID+278, @GGUID+273, -1),
--- Fel Iron Ore - BEM - Ravens Wood
+-- Fel Iron Deposit - BEM - Ravens Wood
 (@SGGUID+279, @GGUID+611, -1),
 (@SGGUID+279, @GGUID+41, -1),
 (@SGGUID+279, @GGUID+596, -1),
@@ -1237,17 +1240,17 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+280 AND @SGGUID+286;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+280, 'Fel Iron Ore - Netherstorm - Area 52', 1, 1, 0, 0),
-(@SGGUID+281, 'Fel Iron Ore - Netherstorm - Manaforge Coruu', 1, 1, 0, 0),
-(@SGGUID+282, 'Fel Iron Ore - Netherstorm - Manaforge Duro', 1, 1, 0, 0),
-(@SGGUID+283, 'Fel Iron Ore - Netherstorm - Manaforge Ultris', 1, 1, 0, 0),
-(@SGGUID+284, 'Fel Iron Ore - Netherstorm - Ruins of Farahlon', 1, 1, 0, 0),
-(@SGGUID+285, 'Fel Iron Ore - Netherstorm - Forge Bases', 1, 1, 0, 0),
-(@SGGUID+286, 'Fel Iron Ore - Netherstorm - Farfield', 1, 1, 0, 0);
+(@SGGUID+280, 'Fel Iron Deposit - Netherstorm - Area 52', 1, 3, 0, 0),
+(@SGGUID+281, 'Fel Iron Deposit - Netherstorm - Manaforge Coruu', 1, 1, 0, 0),
+(@SGGUID+282, 'Fel Iron Deposit - Netherstorm - Manaforge Duro', 1, 4, 0, 0),
+(@SGGUID+283, 'Fel Iron Deposit - Netherstorm - Manaforge Ultris', 1, 1, 0, 0),
+(@SGGUID+284, 'Fel Iron Deposit - Netherstorm - Ruins of Farahlon', 1, 2, 0, 0),
+(@SGGUID+285, 'Fel Iron Deposit - Netherstorm - Forge Bases', 1, 2, 0, 0),
+(@SGGUID+286, 'Fel Iron Deposit - Netherstorm - Farfield', 1, 1, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+280 AND @SGGUID+286;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
--- Fel Iron Ore - Netherstorm - Area 52
+-- Fel Iron Deposit - Netherstorm - Area 52
 (@SGGUID+280, @GGUID+187, -1),
 (@SGGUID+280, @GGUID+492, -1),
 (@SGGUID+280, @GGUID+592, -1),
@@ -1257,13 +1260,13 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+280, @GGUID+382, -1),
 (@SGGUID+280, @GGUID+617, -1),
 (@SGGUID+280, @GGUID+281, -1),
--- Fel Iron Ore - Netherstorm - Manaforge Coruu
+-- Fel Iron Deposit - Netherstorm - Manaforge Coruu
 (@SGGUID+281, @GGUID+153, -1),
 (@SGGUID+281, @GGUID+608, -1),
 (@SGGUID+281, @GGUID+424, -1),
 (@SGGUID+281, @GGUID+48, -1),
 (@SGGUID+281, @GGUID+298, -1),
--- Fel Iron Ore - Netherstorm - Manaforge Duro
+-- Fel Iron Deposit - Netherstorm - Manaforge Duro
 (@SGGUID+282, @GGUID+397, -1),
 (@SGGUID+282, @GGUID+20, -1),
 (@SGGUID+282, @GGUID+419, -1),
@@ -1274,20 +1277,20 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+282, @GGUID+245, -1),
 (@SGGUID+282, @GGUID+476, -1),
 (@SGGUID+282, @GGUID+537, -1),
--- Fel Iron Ore - Netherstorm - Manaforge Ultris
+-- Fel Iron Deposit - Netherstorm - Manaforge Ultris
 (@SGGUID+283, @GGUID+374, -1),
 (@SGGUID+283, @GGUID+96, -1),
 (@SGGUID+283, @GGUID+111, -1),
 (@SGGUID+283, @GGUID+536, -1),
 (@SGGUID+283, @GGUID+78, -1),
--- Fel Iron Ore - Netherstorm - Ruins of Farahlon
+-- Fel Iron Deposit - Netherstorm - Ruins of Farahlon
 (@SGGUID+284, @GGUID+148, -1),
 (@SGGUID+284, @GGUID+523, -1),
 (@SGGUID+284, @GGUID+353, -1),
 (@SGGUID+284, @GGUID+598, -1),
 (@SGGUID+284, @GGUID+388, -1),
 (@SGGUID+284, @GGUID+162, -1),
--- Fel Iron Ore - Netherstorm - Forge Bases
+-- Fel Iron Deposit - Netherstorm - Forge Bases
 (@SGGUID+285, @GGUID+468, -1),
 (@SGGUID+285, @GGUID+116, -1),
 (@SGGUID+285, @GGUID+525, -1),
@@ -1297,7 +1300,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+285, @GGUID+154, -1),
 (@SGGUID+285, @GGUID+104, -1),
 (@SGGUID+285, @GGUID+453, -1),
--- Fel Iron Ore - Netherstorm - Farfield
+-- Fel Iron Deposit - Netherstorm - Farfield
 (@SGGUID+286, @GGUID+491, -1),
 (@SGGUID+286, @GGUID+135, -1),
 (@SGGUID+286, @GGUID+521, -1),
@@ -1305,21 +1308,21 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+287 AND @SGGUID+297;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+287, 'Fel Iron Ore - Shadowmoon - Legion Hold', 1, 1, 0, 0),
-(@SGGUID+288, 'Fel Iron Ore - Shadowmoon - Illidari Point', 1, 1, 0, 0),
-(@SGGUID+289, 'Fel Iron Ore - Shadowmoon - Eclipse Point', 1, 1, 0, 0),
-(@SGGUID+290, 'Fel Iron Ore - Shadowmoon - Gorefiend', 1, 1, 0, 0),
-(@SGGUID+291, 'Fel Iron Ore - Shadowmoon - Black Temple', 1, 1, 0, 0),
-(@SGGUID+292, 'Fel Iron Ore - Shadowmoon - Altar of Shatar', 1, 1, 0, 0),
-(@SGGUID+293, 'Fel Iron Ore - Shadowmoon - Wardens Cage', 1, 1, 0, 0),
-(@SGGUID+294, 'Fel Iron Ore - Shadowmoon - Deathforge (underground)', 1, 1, 0, 0),
-(@SGGUID+295, 'Fel Iron Ore - Shadowmoon - Above Deathforge', 1, 1, 0, 0),
-(@SGGUID+296, 'Fel Iron Ore - Shadowmoon - Hand of Guldan', 1, 1, 0, 0),
-(@SGGUID+297, 'Fel Iron Ore - Shadowmoon - Ruins of Baa''ri', 1, 1, 0, 0);
+(@SGGUID+287, 'Fel Iron Deposit - Shadowmoon - Legion Hold', 1, 2, 0, 0),
+(@SGGUID+288, 'Fel Iron Deposit - Shadowmoon - Illidari Point', 1, 1, 0, 0),
+(@SGGUID+289, 'Fel Iron Deposit - Shadowmoon - Eclipse Point', 1, 1, 0, 0),
+(@SGGUID+290, 'Fel Iron Deposit - Shadowmoon - Gorefiend', 1, 2, 0, 0),
+(@SGGUID+291, 'Fel Iron Deposit - Shadowmoon - Black Temple', 1, 3, 0, 0),
+(@SGGUID+292, 'Fel Iron Deposit - Shadowmoon - Altar of Shatar', 1, 2, 0, 0),
+(@SGGUID+293, 'Fel Iron Deposit - Shadowmoon - Wardens Cage', 1, 2, 0, 0),
+(@SGGUID+294, 'Fel Iron Deposit - Shadowmoon - Deathforge (underground)', 1, 2, 0, 0),
+(@SGGUID+295, 'Fel Iron Deposit - Shadowmoon - Above Deathforge', 1, 2, 0, 0),
+(@SGGUID+296, 'Fel Iron Deposit - Shadowmoon - Hand of Guldan', 1, 3, 0, 0),
+(@SGGUID+297, 'Fel Iron Deposit - Shadowmoon - Ruins of Baa''ri', 1, 2, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+287 AND @SGGUID+297;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
--- Fel Iron Ore - Shadowmoon - Legion Hold
+-- Fel Iron Deposit - Shadowmoon - Legion Hold
 (@SGGUID+287, @GGUID+201, -1),
 (@SGGUID+287, @GGUID+522, -1),
 (@SGGUID+287, @GGUID+543, -1),
@@ -1327,19 +1330,19 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+287, @GGUID+197, -1),
 (@SGGUID+287, @GGUID+31, -1),
 (@SGGUID+287, @GGUID+100, -1),
--- Fel Iron Ore - Shadowmoon - Illidari Point
+-- Fel Iron Deposit - Shadowmoon - Illidari Point
 (@SGGUID+288, @GGUID+109, -1),
 (@SGGUID+288, @GGUID+13, -1),
 (@SGGUID+288, @GGUID+527, -1),
 (@SGGUID+288, @GGUID+335, -1),
 (@SGGUID+288, @GGUID+72, -1),
--- Fel Iron Ore - Shadowmoon - Eclipse Point
+-- Fel Iron Deposit - Shadowmoon - Eclipse Point
 (@SGGUID+289, @GGUID+150, -1),
 (@SGGUID+289, @GGUID+32, -1),
 (@SGGUID+289, @GGUID+262, -1),
 (@SGGUID+289, @GGUID+152, -1),
 (@SGGUID+289, @GGUID+270, -1),
--- Fel Iron Ore - Shadowmoon - Gorefiend
+-- Fel Iron Deposit - Shadowmoon - Gorefiend
 (@SGGUID+290, @GGUID+69, -1),
 (@SGGUID+290, @GGUID+114, -1),
 (@SGGUID+290, @GGUID+331, -1),
@@ -1348,7 +1351,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+290, @GGUID+3, -1),
 (@SGGUID+290, @GGUID+390, -1),
 (@SGGUID+290, @GGUID+481, -1),
--- Fel Iron Ore - Shadowmoon - Black Temple
+-- Fel Iron Deposit - Shadowmoon - Black Temple
 (@SGGUID+291, @GGUID+182, -1),
 (@SGGUID+291, @GGUID+6, -1),
 (@SGGUID+291, @GGUID+531, -1),
@@ -1359,7 +1362,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+291, @GGUID+585, -1),
 (@SGGUID+291, @GGUID+62, -1),
 (@SGGUID+291, @GGUID+375, -1),
--- Fel Iron Ore - Shadowmoon - Altar of Shatar
+-- Fel Iron Deposit - Shadowmoon - Altar of Shatar
 (@SGGUID+292, @GGUID+441, -1),
 (@SGGUID+292, @GGUID+19, -1),
 (@SGGUID+292, @GGUID+141, -1),
@@ -1368,27 +1371,27 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+292, @GGUID+159, -1),
 (@SGGUID+292, @GGUID+610, -1),
 (@SGGUID+292, @GGUID+25, -1),
--- Fel Iron Ore - Shadowmoon - Wardens Cage
+-- Fel Iron Deposit - Shadowmoon - Wardens Cage
 (@SGGUID+293, @GGUID+176, -1),
 (@SGGUID+293, @GGUID+63, -1),
 (@SGGUID+293, @GGUID+557, -1),
 (@SGGUID+293, @GGUID+482, -1),
 (@SGGUID+293, @GGUID+535, -1),
 (@SGGUID+293, @GGUID+554, -1),
--- Fel Iron Ore - Shadowmoon - Deathforge (underground)
+-- Fel Iron Deposit - Shadowmoon - Deathforge (underground)
 (@SGGUID+294, @GGUID+93, -1),
 (@SGGUID+294, @GGUID+145, -1),
 (@SGGUID+294, @GGUID+400, -1),
 (@SGGUID+294, @GGUID+288, -1),
 (@SGGUID+294, @GGUID+520, -1),
--- Fel Iron Ore - Shadowmoon - Above Deathforge
+-- Fel Iron Deposit - Shadowmoon - Above Deathforge
 (@SGGUID+295, @GGUID+242, -1),
 (@SGGUID+295, @GGUID+127, -1),
 (@SGGUID+295, @GGUID+451, -1),
 (@SGGUID+295, @GGUID+66, -1),
 (@SGGUID+295, @GGUID+594, -1),
 (@SGGUID+295, @GGUID+565, -1),
--- Fel Iron Ore - Shadowmoon - Hand of Guldan
+-- Fel Iron Deposit - Shadowmoon - Hand of Guldan
 (@SGGUID+296, @GGUID+2, -1),
 (@SGGUID+296, @GGUID+394, -1),
 (@SGGUID+296, @GGUID+312, -1),
@@ -1399,7 +1402,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+296, @GGUID+40, -1),
 (@SGGUID+296, @GGUID+228, -1),
 (@SGGUID+296, @GGUID+53, -1),
--- Fel Iron Ore - Shadowmoon - Ruins of Baa''ri
+-- Fel Iron Deposit - Shadowmoon - Ruins of Baa''ri
 (@SGGUID+297, @GGUID+87, -1),
 (@SGGUID+297, @GGUID+65, -1),
 (@SGGUID+297, @GGUID+218, -1),
@@ -2211,24 +2214,24 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+322 AND @SGGUID+339;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+322, 'Adamantite - Nagrand - Oshugun', 1, 1, 0, 0),
-(@SGGUID+323, 'Adamantite - Nagrand - Telaar', 1, 1, 0, 0),
-(@SGGUID+324, 'Adamantite - Nagrand - Sunspring Post', 1, 1, 0, 0),
-(@SGGUID+325, 'Adamantite - Nagrand - Kilsorrow Fortress', 1, 1, 0, 0),
-(@SGGUID+326, 'Adamantite - Nagrand - Halaa', 1, 1, 0, 0),
-(@SGGUID+327, 'Adamantite - Nagrand - Ring of Trials Ravine', 1, 1, 0, 0),
-(@SGGUID+328, 'Adamantite - Nagrand - Burning Blade Ruins', 1, 1, 0, 0),
-(@SGGUID+329, 'Adamantite - Nagrand - Windyreed Village', 1, 1, 0, 0),
+(@SGGUID+322, 'Adamantite - Nagrand - Oshugun', 1, 4, 0, 0),
+(@SGGUID+323, 'Adamantite - Nagrand - Telaar', 1, 2, 0, 0),
+(@SGGUID+324, 'Adamantite - Nagrand - Sunspring Post', 1, 3, 0, 0),
+(@SGGUID+325, 'Adamantite - Nagrand - Kilsorrow Fortress', 1, 2, 0, 0),
+(@SGGUID+326, 'Adamantite - Nagrand - Halaa', 1, 3, 0, 0),
+(@SGGUID+327, 'Adamantite - Nagrand - Ring of Trials Ravine', 1, 3, 0, 0),
+(@SGGUID+328, 'Adamantite - Nagrand - Burning Blade Ruins', 1, 2, 0, 0),
+(@SGGUID+329, 'Adamantite - Nagrand - Windyreed Village', 1, 2, 0, 0),
 (@SGGUID+330, 'Adamantite - Nagrand - NE Ledge', 1, 1, 0, 0),
 (@SGGUID+331, 'Adamantite - Nagrand - Skysong Lake', 1, 1, 0, 0),
-(@SGGUID+332, 'Adamantite - Nagrand - Laughing Skull Ruins', 1, 1, 0, 0),
-(@SGGUID+333, 'Adamantite - Nagrand - Halaa Cave North', 1, 1, 0, 0),
-(@SGGUID+334, 'Adamantite - Nagrand - Halaa Cave South', 1, 1, 0, 0),
-(@SGGUID+335, 'Adamantite - Nagrand - Warmaul Hill', 1, 1, 0, 0),
-(@SGGUID+336, 'Adamantite - Nagrand - Warmaul Cave South', 1, 1, 0, 0),
-(@SGGUID+337, 'Adamantite - Nagrand - Warmaul Cave North', 1, 1, 0, 0),
+(@SGGUID+332, 'Adamantite - Nagrand - Laughing Skull Ruins', 1, 2, 0, 0),
+(@SGGUID+333, 'Adamantite - Nagrand - Halaa Cave North', 1, 3, 0, 0),
+(@SGGUID+334, 'Adamantite - Nagrand - Halaa Cave South', 1, 3, 0, 0),
+(@SGGUID+335, 'Adamantite - Nagrand - Warmaul Hill', 1, 2, 0, 0),
+(@SGGUID+336, 'Adamantite - Nagrand - Warmaul Cave South', 1, 2, 0, 0),
+(@SGGUID+337, 'Adamantite - Nagrand - Warmaul Cave North', 1, 2, 0, 0),
 (@SGGUID+338, 'Adamantite - Nagrand - Twilight Ridge Outer', 1, 1, 0, 0),
-(@SGGUID+339, 'Adamantite - Nagrand - Twilight Ridge Inner', 1, 1, 0, 0);
+(@SGGUID+339, 'Adamantite - Nagrand - Twilight Ridge Inner', 1, 2, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+322 AND @SGGUID+339;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2395,21 +2398,21 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+340 AND @SGGUID+354;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+340, 'Adamantite - BEM - Ogrila', 1, 1, 0, 0),
+(@SGGUID+340, 'Adamantite - BEM - Ogrila', 1, 3, 0, 0),
 (@SGGUID+341, 'Adamantite - BEM - Sylvanaar', 1, 1, 0, 0),
 (@SGGUID+342, 'Adamantite - BEM - Thunderhold Stronghold', 1, 1, 0, 0),
-(@SGGUID+343, 'Adamantite - BEM - Toshley Plateau South', 1, 1, 0, 0),
-(@SGGUID+344, 'Adamantite - BEM - Toshley Plateau North', 1, 1, 0, 0),
+(@SGGUID+343, 'Adamantite - BEM - Toshley Plateau South', 1, 4, 0, 0),
+(@SGGUID+344, 'Adamantite - BEM - Toshley Plateau North', 1, 5, 0, 0),
 (@SGGUID+345, 'Adamantite - BEM - Vekhaar Stand', 1, 1, 0, 0),
-(@SGGUID+346, 'Adamantite - BEM - Deaths Door', 1, 1, 0, 0),
-(@SGGUID+347, 'Adamantite - BEM - Bloodmaul Outpost', 1, 1, 0, 0),
-(@SGGUID+348, 'Adamantite - BEM - Blackwing Coven', 1, 1, 0, 0),
+(@SGGUID+346, 'Adamantite - BEM - Deaths Door', 1, 2, 0, 0),
+(@SGGUID+347, 'Adamantite - BEM - Bloodmaul Outpost', 1, 3, 0, 0),
+(@SGGUID+348, 'Adamantite - BEM - Blackwing Coven', 1, 2, 0, 0),
 (@SGGUID+349, 'Adamantite - BEM - Ruuan Weald', 1, 1, 0, 0),
-(@SGGUID+350, 'Adamantite - BEM - Draenethyst Mine', 1, 1, 0, 0),
-(@SGGUID+351, 'Adamantite - BEM - Bashirs Landing', 1, 1, 0, 0),
-(@SGGUID+352, 'Adamantite - BEM - Ravens Wood', 1, 1, 0, 0),
-(@SGGUID+353, 'Adamantite - BEM - Trogmas Claim', 1, 1, 0, 0),
-(@SGGUID+354, 'Adamantite - BEM - Gruuls Lair', 1, 1, 0, 0);
+(@SGGUID+350, 'Adamantite - BEM - Draenethyst Mine', 1, 2, 0, 0),
+(@SGGUID+351, 'Adamantite - BEM - Bashirs Landing', 1, 3, 0, 0),
+(@SGGUID+352, 'Adamantite - BEM - Ravens Wood', 1, 3, 0, 0),
+(@SGGUID+353, 'Adamantite - BEM - Trogmas Claim', 1, 2, 0, 0),
+(@SGGUID+354, 'Adamantite - BEM - Gruuls Lair', 1, 3, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+340 AND @SGGUID+354;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2564,17 +2567,17 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+355 AND @SGGUID+365;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+355, 'Adamantite - Netherstorm - Area 52', 1, 1, 0, 0),
-(@SGGUID+356, 'Adamantite - Netherstorm - Manaforge Coruu', 1, 1, 0, 0),
-(@SGGUID+357, 'Adamantite - Netherstorm - Manaforge Duro', 1, 1, 0, 0),
-(@SGGUID+358, 'Adamantite - Netherstorm - Manaforge Ara', 1, 1, 0, 0),
-(@SGGUID+359, 'Adamantite - Netherstorm - Trelleum Mine', 1, 1, 0, 0),
-(@SGGUID+360, 'Adamantite - Netherstorm - Manaforge Ultris', 1, 1, 0, 0),
-(@SGGUID+361, 'Adamantite - Netherstorm - Access Shaft Zeon', 1, 1, 0, 0),
+(@SGGUID+355, 'Adamantite - Netherstorm - Area 52', 1, 5, 0, 0),
+(@SGGUID+356, 'Adamantite - Netherstorm - Manaforge Coruu', 1, 2, 0, 0),
+(@SGGUID+357, 'Adamantite - Netherstorm - Manaforge Duro', 1, 5, 0, 0),
+(@SGGUID+358, 'Adamantite - Netherstorm - Manaforge Ara', 1, 2, 0, 0),
+(@SGGUID+359, 'Adamantite - Netherstorm - Trelleum Mine', 1, 4, 0, 0),
+(@SGGUID+360, 'Adamantite - Netherstorm - Manaforge Ultris', 1, 5, 0, 0),
+(@SGGUID+361, 'Adamantite - Netherstorm - Access Shaft Zeon', 1, 4, 0, 0),
 (@SGGUID+362, 'Adamantite - Netherstorm - Stormspire', 1, 1, 0, 0),
 (@SGGUID+363, 'Adamantite - Netherstorm - Ruins of Farahlon', 1, 1, 0, 0),
 (@SGGUID+364, 'Adamantite - Netherstorm - Forge Bases', 1, 1, 0, 0),
-(@SGGUID+365, 'Adamantite - Netherstorm - Socrethars Seat', 1, 1, 0, 0);
+(@SGGUID+365, 'Adamantite - Netherstorm - Socrethars Seat', 1, 2, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+355 AND @SGGUID+365;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2707,18 +2710,18 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+366 AND @SGGUID+377;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+366, 'Adamantite - SMV - Legion Hold', 1, 1, 0, 0),
+(@SGGUID+366, 'Adamantite - SMV - Legion Hold', 1, 2, 0, 0),
 (@SGGUID+367, 'Adamantite - SMV - Illidari Point', 1, 1, 0, 0),
-(@SGGUID+368, 'Adamantite - SMV - Shadowmoon Village', 1, 1, 0, 0),
+(@SGGUID+368, 'Adamantite - SMV - Shadowmoon Village', 1, 2, 0, 0),
 (@SGGUID+369, 'Adamantite - SMV - Coilskar Point', 1, 1, 0, 0),
-(@SGGUID+370, 'Adamantite - SMV - Eclipse Point', 1, 1, 0, 0),
-(@SGGUID+371, 'Adamantite - SMV - Wardens Cage', 1, 1, 0, 0),
-(@SGGUID+372, 'Adamantite - SMV - Altar of Shatar', 1, 1, 0, 0),
-(@SGGUID+373, 'Adamantite - SMV - Deathforge (underground)', 1, 1, 0, 0),
-(@SGGUID+374, 'Adamantite - SMV - Above Deathforge', 1, 1, 0, 0),
-(@SGGUID+375, 'Adamantite - SMV - Coilskar Cistern', 1, 1, 0, 0),
-(@SGGUID+376, 'Adamantite - SMV - Netherwing Ledge East', 1, 1, 0, 0),
-(@SGGUID+377, 'Adamantite - SMV - Netherwing Ledge West', 1, 1, 0, 0);
+(@SGGUID+370, 'Adamantite - SMV - Eclipse Point', 1, 3, 0, 0),
+(@SGGUID+371, 'Adamantite - SMV - Wardens Cage', 1, 3, 0, 0),
+(@SGGUID+372, 'Adamantite - SMV - Altar of Shatar', 1, 2, 0, 0),
+(@SGGUID+373, 'Adamantite - SMV - Deathforge (underground)', 1, 3, 0, 0),
+(@SGGUID+374, 'Adamantite - SMV - Above Deathforge', 1, 2, 0, 0),
+(@SGGUID+375, 'Adamantite - SMV - Coilskar Cistern', 1, 5, 0, 0),
+(@SGGUID+376, 'Adamantite - SMV - Netherwing Ledge East', 1, 2, 0, 0),
+(@SGGUID+377, 'Adamantite - SMV - Netherwing Ledge West', 1, 2, 0, 0);
 
 DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+366 AND @SGGUID+377;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
@@ -2824,7 +2827,6 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+377, @GGUID+499, -1),
 (@SGGUID+377, @GGUID+349, -1),
 (@SGGUID+377, @GGUID+408, -1);
-
 
 -- nethercite
 SET @GGUID := 181800;
